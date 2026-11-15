@@ -85,7 +85,7 @@ window.addEventListener("load", () => { const splash = document.getElementById("
 // Automatic language: use the visitor's browser language, with a manual FR/EN/ES switch.
 const translations = {
   fr: {
-    install:"Installer l'app", heroCopy:"Des sélections qui font monter la température, même en hiver. 🎄",
+    install:"Installer l'app", genresLine:"HIP-HOP. R&B. DANCEHALL. REGGAETON.", holidayTitle:"DJ DEFKILLA — CHRISTMAS VIBES", officialEyebrow:"SÉLECTION OFFICIELLE DJ DEFKILLA", officialTitle:"UNE SÉLECTION, UNE SIGNATURE.", officialText:"Les mixes publiés ici sont sélectionnés et ajoutés exclusivement par DJ DEFKILLA. Installe-toi, découvre la sélection et profite de l'écoute.", mp3Hint:"Des formats courts et des exclusivités à écouter directement ici.", mp3EmptyTitle:"Les premiers MP3 arrivent bientôt.", mp3EmptyText:"Reviens découvrir les prochains sons !", footerTag:"FAIT POUR LA MUSIQUE.", heroCopy:"Des sélections qui font monter la température, même en hiver. 🎄",
     enterUniverse:"ENTRER DANS L'UNIVERS", holidaySub:"GOOD MUSIC • GOOD ENERGY • HOLIDAY SEASON",
     yourSelection:"TA SÉLECTION", mixes:"LES MIXES", emptyMix:"LES PROCHAINS MIXES ARRIVENT BIENTÔT. Reste connecté à DJ DEFKILLA.", online:"● EN LIGNE", all:"Tous",
     mixHint:"Tous les mixes de cette sélection sont choisis et publiés par DJ DEFKILLA.",
@@ -93,12 +93,12 @@ const translations = {
     musicStyle:"Style musical", mixcloudLink:"Lien de ton mix Mixcloud", addToList:"AJOUTER À MA LISTE",
     localNote:"Note : les mixes ajoutés ici sont enregistrés dans ce navigateur uniquement. Pour les afficher automatiquement chez tous tes auditeurs, il faudra ensuite connecter une base de données ou un espace d'administration en ligne.",
     aboutEyebrow:"QUI EST DERRIÈRE LES PLATINES ?", aboutText:"Hip-hop, R&B, Dancehall et Reggaeton. Une sélection, une énergie, une signature.",
-    contact:"CONTACTER LE DJ ↗", playerNote:"La lecture est fournie par Mixcloud et nécessite une connexion Internet.",
+    playerNote:"La lecture est fournie par Mixcloud et nécessite une connexion Internet.",
     close:"Fermer", play:"▶ ÉCOUTER", share:"Partager ↗", invalid:"Entre un lien de mix publié sur Mixcloud (https://www.mixcloud.com/...).",
     added:"Mix ajouté à cette liste sur cet appareil !", copied:"Lien copié !"
   },
   en: {
-    install:"Install app", heroCopy:"The selections that turn up the heat, even in winter. 🎄",
+    install:"Install app", genresLine:"HIP-HOP. R&B. DANCEHALL. REGGAETON.", holidayTitle:"DJ DEFKILLA — CHRISTMAS VIBES", officialEyebrow:"OFFICIAL DJ DEFKILLA SELECTION", officialTitle:"ONE SELECTION, ONE SIGNATURE.", officialText:"The mixes published here are selected and added exclusively by DJ DEFKILLA. Get comfortable, discover the selection and enjoy listening.", mp3Hint:"Short mixes and exclusives to listen to right here.", mp3EmptyTitle:"The first MP3s are coming soon.", mp3EmptyText:"Come back soon to discover new tracks!", footerTag:"BUILT FOR THE MUSIC.", heroCopy:"The selections that turn up the heat, even in winter. 🎄",
     enterUniverse:"ENTER THE EXPERIENCE", holidaySub:"GOOD MUSIC • GOOD ENERGY • HOLIDAY SEASON",
     yourSelection:"YOUR SELECTION", mixes:"MIXES", emptyMix:"NEW MIXES COMING SOON. Stay tuned to DJ DEFKILLA.", online:"● ONLINE", all:"All",
     mixHint:"Every mix in this selection is chosen and published by DJ DEFKILLA.",
@@ -106,12 +106,12 @@ const translations = {
     musicStyle:"Music style", mixcloudLink:"Your Mixcloud mix link", addToList:"ADD TO MY LIST",
     localNote:"Note: mixes added here are saved only in this browser. To show them automatically to all listeners, a shared online database or admin area will be needed.",
     aboutEyebrow:"WHO'S BEHIND THE DECKS?", aboutText:"Hip-hop, R&B, Dancehall and Reggaeton. One selection, one energy, one signature.",
-    contact:"CONTACT THE DJ ↗", playerNote:"Playback is provided by Mixcloud and requires an internet connection.",
+    playerNote:"Playback is provided by Mixcloud and requires an internet connection.",
     close:"Close", play:"▶ LISTEN", share:"Share ↗", invalid:"Enter a Mixcloud mix URL (https://www.mixcloud.com/...).",
     added:"Mix added to this list on this device!", copied:"Link copied!"
   },
   es: {
-    install:"Instalar la app", heroCopy:"Selecciones que suben la temperatura, incluso en invierno. 🎄",
+    install:"Instalar la app", genresLine:"HIP-HOP. R&B. DANCEHALL. REGGAETON.", holidayTitle:"DJ DEFKILLA — NAVIDAD VIBES", officialEyebrow:"SELECCIÓN OFICIAL DJ DEFKILLA", officialTitle:"UNA SELECCIÓN, UNA FIRMA.", officialText:"Los mixes publicados aquí son seleccionados y añadidos exclusivamente por DJ DEFKILLA. Ponte cómodo, descubre la selección y disfruta escuchando.", mp3Hint:"Mixes cortos y exclusividades para escuchar directamente aquí.", mp3EmptyTitle:"Los primeros MP3 llegan pronto.", mp3EmptyText:"¡Vuelve para descubrir nuevos temas!", footerTag:"HECHO PARA LA MÚSICA.", heroCopy:"Selecciones que suben la temperatura, incluso en invierno. 🎄",
     enterUniverse:"ENTRAR EN EL UNIVERSO", holidaySub:"BUENA MÚSICA • BUENA ENERGÍA • TEMPORADA FESTIVA",
     yourSelection:"TU SELECCIÓN", mixes:"SESIONES", emptyMix:"NUEVAS SESIONES MUY PRONTO. Sigue conectado con DJ DEFKILLA.", online:"● EN LÍNEA", all:"Todos",
     mixHint:"Todas las sesiones de esta selección son elegidas y publicadas por DJ DEFKILLA.",
@@ -119,7 +119,7 @@ const translations = {
     musicStyle:"Estilo musical", mixcloudLink:"Enlace de tu sesión en Mixcloud", addToList:"AÑADIR A MI LISTA",
     localNote:"Nota: las sesiones añadidas aquí se guardan solo en este navegador. Para mostrarlas automáticamente a todos los oyentes, hará falta una base de datos compartida o un área de administración en línea.",
     aboutEyebrow:"¿QUIÉN ESTÁ DETRÁS DE LOS PLATOS?", aboutText:"Hip-hop, R&B, Dancehall y Reggaeton. Una selección, una energía, una firma.",
-    contact:"CONTACTAR CON EL DJ ↗", playerNote:"La reproducción se ofrece mediante Mixcloud y requiere conexión a Internet.",
+    playerNote:"La reproducción se ofrece mediante Mixcloud y requiere conexión a Internet.",
     close:"Cerrar", play:"▶ ESCUCHAR", share:"Compartir ↗", invalid:"Introduce un enlace de Mixcloud (https://www.mixcloud.com/...).",
     added:"¡Sesión añadida a esta lista en este dispositivo!", copied:"¡Enlace copiado!"
   }
@@ -135,13 +135,14 @@ function applyLanguage(lang) {
   if (install) install.textContent = translations[chosen].install;
   const close = document.querySelector(".close");
   if (close) close.setAttribute("aria-label", translations[chosen].close);
-  localStorage.setItem("dj-defkilla-language", chosen);
+  try { localStorage.setItem("dj-defkilla-language", chosen); } catch (error) {}
   const select = document.getElementById("languageSelect");
   if (select) select.value = chosen;
   render();
 }
 const languageSelect = document.getElementById("languageSelect");
-const savedLanguage = localStorage.getItem("dj-defkilla-language");
+let savedLanguage = null;
+try { savedLanguage = localStorage.getItem("dj-defkilla-language"); } catch (error) {}
 const browserLanguage = (navigator.language || "fr").slice(0,2).toLowerCase();
 applyLanguage(savedLanguage || (translations[browserLanguage] ? browserLanguage : "fr"));
 languageSelect?.addEventListener("change", () => applyLanguage(languageSelect.value));
