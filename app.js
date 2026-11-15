@@ -163,29 +163,52 @@ applyLanguage(savedLanguage || (translations[browserLanguage] ? browserLanguage 
 languageSelect?.addEventListener("change", () => applyLanguage(languageSelect.value));
 
 
-// Optional background instrumental: playback starts only after the visitor taps.
-(() => {
+
+// DJ DEFKILLA background music — resilient tap-to-play controls.
+document.addEventListener("DOMContentLoaded", () => {
   const audio = document.getElementById("backgroundAudio");
   const toggle = document.getElementById("soundToggle");
   const volume = document.getElementById("soundVolume");
   const status = document.getElementById("soundStatus");
   if (!audio || !toggle || !volume || !status) return;
-  audio.volume = Number(volume.value);
-  const sync = (playing) => {
+
+  audio.loop = true;
+  audio.preload = "auto";
+  audio.volume = Number(volume.value || 0.22);
+
+  const setState = (playing, message) => {
     toggle.textContent = playing ? "Ⅱ PAUSE" : "▶ ÉCOUTER";
     toggle.classList.toggle("is-playing", playing);
-    toggle.setAttribute("aria-pressed", String(playing));
-    status.textContent = playing ? "Ambiance activée" : "Musique désactivée";
+    toggle.setAttribute("aria-pressed", playing ? "true" : "false");
+    status.textContent = message || (playing ? "Ambiance activée" : "Musique désactivée");
   };
-  toggle.addEventListener("click", async () => {
-    if (audio.paused) {
-      try { await audio.play(); sync(true); }
-      catch { status.textContent = "Lecture indisponible — réessaie"; }
-    } else {
-      audio.pause(); sync(false);
+
+  toggle.addEventListener("click", async (event) => {
+    event.preventDefault();
+    if (!audio.paused) {
+      audio.pause();
+      setState(false, "Musique en pause");
+      return;
+    }
+    setState(false, "Chargement de la musique…");
+    try {
+      audio.currentTime = 0;
+      await audio.play();
+      setState(true, "Ambiance activée");
+    } catch (error) {
+      console.error("DJ DEFKILLA audio playback error:", error);
+      setState(false, "Lecture impossible : vérifie ta connexion puis réessaie");
     }
   });
-  volume.addEventListener("input", () => { audio.volume = Number(volume.value); });
-  audio.addEventListener("pause", () => sync(false));
-  audio.addEventListener("play", () => sync(true));
-})();
+
+  volume.addEventListener("input", () => {
+    audio.volume = Number(volume.value);
+  });
+
+  audio.addEventListener("play", () => setState(true, "Ambiance activée"));
+  audio.addEventListener("pause", () => setState(false, "Musique en pause"));
+  audio.addEventListener("ended", () => setState(false, "Musique terminée"));
+  audio.addEventListener("error", () => {
+    setState(false, "Fichier audio introuvable — vérifie le dépôt GitHub");
+  });
+});
