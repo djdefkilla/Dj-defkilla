@@ -160,6 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
   audio.loop = true;
   audio.preload = "auto";
   audio.volume = Number(volume.value || 0.22);
+  audio.load();
 
   const setState = (playing, message) => {
     toggle.textContent = playing ? "Ⅱ PAUSE" : "▶ ÉCOUTER";
