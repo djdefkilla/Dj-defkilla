@@ -172,14 +172,14 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
     if (!audio.paused) {
       audio.pause();
-      setState(false, "Musique en pause");
+      setState(false, "Jingle Bells • en pause");
       return;
     }
     setState(false, "Chargement de la musique…");
     try {
       audio.currentTime = 0;
       await audio.play();
-      setState(true, "Ambiance activée");
+      setState(true, "Jingle Bells • DJ DEFKILLA remix en lecture");
     } catch (error) {
       console.error("DJ DEFKILLA audio playback error:", error);
       setState(false, "Lecture impossible : vérifie ta connexion puis réessaie");
@@ -194,7 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
   audio.addEventListener("pause", () => setState(false, "Musique en pause"));
   audio.addEventListener("ended", () => setState(false, "Musique terminée"));
   audio.addEventListener("loadedmetadata", () => {
-    if (audio.duration) status.textContent = "Jingle Bells • " + Math.floor(audio.duration/60) + ":" + String(Math.floor(audio.duration%60)).padStart(2,"0");
+    if (audio.duration) status.textContent = "Jingle Bells • DJ DEFKILLA remix • " + Math.floor(audio.duration/60) + ":" + String(Math.floor(audio.duration%60)).padStart(2,"0");
   });
   audio.addEventListener("error", () => {
     setState(false, "Erreur audio — fichier MP3 non chargé");
