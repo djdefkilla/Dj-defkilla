@@ -95,3 +95,5 @@ installBtn.addEventListener("click", async () => {
   deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt = null; installBtn.hidden = true;
 });
 if ("serviceWorker" in navigator) window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(()=>{}));
+
+window.addEventListener("load", () => { const splash = document.getElementById("splash"); if (splash) setTimeout(() => splash.remove(), 3400); });
