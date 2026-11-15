@@ -32,18 +32,7 @@ body.welcome-open{overflow:hidden!important}
     </a>
     <div class="header-actions"><select id="languageSelect" class="language-select" aria-label="Language"><option value="fr">FR</option><option value="en">EN</option><option value="es">ES</option></select><button id="installBtn" class="install-btn" hidden>Installer l'app</button></div>
   </header>
-  <aside class="sound-dock" aria-label="Ambiance musicale DJ DEFKILLA">
-    <div class="sound-copy">
-      <span class="sound-kicker">DJ DEFKILLA • CHRISTMAS SCRATCH EDITION</span>
-      <strong>JINGLE BELLS • DJ SCRATCH REMIX</strong>
-      <small id="soundStatus">Jingle Bells • prêt à écouter</small>
-    </div>
-    <button id="soundToggle" class="sound-toggle" type="button" aria-pressed="false">▶ ÉCOUTER</button>
-    <label class="sound-volume" for="soundVolume">VOL
-      <input id="soundVolume" type="range" min="0" max="1" step="0.05" value="0.22" aria-label="Volume de la musique de fond">
-    </label>
-    <audio id="backgroundAudio" src="./dj-defkilla-jingle-bells-scratch.mp3" loop preload="auto" playsinline></audio>
-  </aside>
+
 
   <main>
     <section class="hero">
@@ -56,6 +45,19 @@ body.welcome-open{overflow:hidden!important}
       </div>
       <div class="hero-tag">OLD SCHOOL<br><b>NEW ENERGY</b></div><div class="holiday-sticker" aria-hidden="true">MERRY<br><strong>BEATS</strong><span>✦</span></div>
     </section>
+
+  <aside class="sound-dock" aria-label="Ambiance musicale DJ DEFKILLA">
+    <div class="sound-copy">
+      <span class="sound-kicker">DJ DEFKILLA • CHRISTMAS SCRATCH EDITION</span>
+      <strong>JINGLE BELLS • DJ SCRATCH REMIX</strong>
+      <small id="soundStatus">Jingle Bells • prêt à écouter</small>
+    </div>
+    <button id="soundToggle" class="sound-toggle" type="button" aria-pressed="false">▶ ÉCOUTER</button>
+    <label class="sound-volume" for="soundVolume">VOL
+      <input id="soundVolume" type="range" min="0" max="1" step="0.05" value="0.22" aria-label="Volume de la musique de fond">
+    </label>
+    <audio id="backgroundAudio" src="./dj-defkilla-jingle-bells-scratch.mp3" loop preload="auto" playsinline></audio>
+  </aside>
 
     <div class="holiday-note"><span class="note-star">✦</span> <b data-i18n="holidayTitle">DJ DEFKILLA — CHRISTMAS VIBES</b> <span class="note-star">✦</span><small data-i18n="holidaySub">GOOD MUSIC • GOOD ENERGY • HOLIDAY SEASON</small></div>
     <section class="genres" aria-label="Styles musicaux">
