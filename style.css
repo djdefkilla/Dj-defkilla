@@ -390,3 +390,11 @@ footer{background:#08080a!important;border-top:1px solid #7e1727!important}
  .mix-grid{grid-template-columns:1fr 1fr!important}
  .sound-copy strong{font-size:16px!important}
 }
+
+
+/* V14.2 — sound dock placed after the hero, with DJ artwork */
+.sound-dock{position:relative!important;top:auto!important;z-index:8!important;margin:0!important;padding:16px clamp(14px,4vw,42px)!important;grid-template-columns:72px minmax(0,1fr) auto!important;grid-template-rows:auto auto!important;gap:8px 15px!important;background:linear-gradient(90deg,rgba(7,7,9,.96),rgba(20,7,11,.94) 55%,rgba(7,28,18,.96)),url("dj-defkilla-hiphop-logo.png") left center/cover no-repeat!important;border-top:2px solid #e7c978!important;border-bottom:2px solid #a7192d!important}
+.sound-dock:before{content:"";grid-column:1;grid-row:1/3;width:66px;height:66px;background:url("dj-defkilla-hiphop-logo.png") center/contain no-repeat;filter:drop-shadow(0 0 8px #f21d35)}
+.sound-copy{grid-column:2!important;grid-row:1!important}.sound-toggle{grid-column:3!important;grid-row:1/3!important}.sound-volume{grid-column:2!important;grid-row:2!important}
+@media(max-width:520px){.sound-dock{grid-template-columns:52px minmax(0,1fr) auto!important;gap:7px 9px!important;padding:12px 10px!important}.sound-dock:before{width:48px;height:48px}.sound-copy strong{font-size:14px!important;line-height:1.1}.sound-kicker{font-size:7px!important;letter-spacing:1px!important}.sound-toggle{min-width:82px!important;min-height:44px!important;padding:0 9px!important;font-size:10px!important}.sound-volume input{max-width:100%!important}}
+@media(max-width:360px){.sound-dock{grid-template-columns:42px minmax(0,1fr) auto!important}.sound-dock:before{width:40px;height:40px}.sound-toggle{min-width:72px!important;font-size:9px!important}.sound-copy strong{font-size:12px!important}}
