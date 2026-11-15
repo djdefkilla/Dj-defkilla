@@ -86,3 +86,44 @@ body{background-image:radial-gradient(circle at 10% 8%,rgba(30,139,82,.07),trans
 .about{background:linear-gradient(110deg,#0c0c0e,#102017 48%,#1b0d10)}
 footer{border-top:1px solid #28282c}
 @media(prefers-reduced-motion:reduce){.holiday-lights span{animation:none}}
+
+
+/* V4 — a visibly festive Christmas skin, while keeping the old-school DJ identity */
+:root{--holiday-green:#197348;--holiday-gold:#e3c47b}
+body{position:relative}
+.snowfall{position:fixed;inset:0;z-index:4;pointer-events:none;opacity:.65;background-image:
+ radial-gradient(2px 2px at 18px 35px,#fff 98%,transparent),
+ radial-gradient(1.5px 1.5px at 90px 120px,#fff 98%,transparent),
+ radial-gradient(2px 2px at 160px 70px,#fff 98%,transparent),
+ radial-gradient(1px 1px at 220px 170px,#fff 98%,transparent),
+ radial-gradient(2px 2px at 280px 25px,#fff 98%,transparent);
+ background-size:320px 220px;animation:snowDrift 16s linear infinite}
+@keyframes snowDrift{from{background-position:0 -220px}to{background-position:40px 440px}}
+.holiday-lights{height:22px;background:#101013;overflow:hidden}
+.holiday-lights:before{content:"";position:absolute;left:2%;right:2%;top:0;height:12px;border-top:2px solid #b99b59;border-radius:50%}
+.holiday-lights span{width:9px;height:13px;border-radius:45% 45% 55% 55%;margin-top:7px;box-shadow:0 0 12px currentColor}
+.hero{isolation:isolate}
+.hero-garland{position:absolute;z-index:3;top:0;left:0;right:0;height:62px;display:flex;align-items:flex-start;justify-content:space-around;padding:11px 4% 0;color:#e6c77e;font-size:17px;text-shadow:0 0 9px #e6c77e;pointer-events:none}
+.hero-garland:before{content:"";position:absolute;left:0;right:0;top:0;height:34px;border-bottom:2px solid #1e7048;border-radius:0 0 50% 50%;transform:translateY(-18px)}
+.hero-garland span:nth-child(2n){color:#f12b35;text-shadow:0 0 12px #f12b35}
+.hero-garland span:nth-child(3n){color:#fff}
+.holiday-sticker{position:absolute;z-index:3;right:7%;top:18%;width:88px;height:88px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#17633f;border:3px solid #e4c477;box-shadow:0 0 0 5px #17633f88,0 5px 22px #0009;transform:rotate(9deg);color:#fff;font:800 12px/.95 'Barlow Condensed';letter-spacing:1px;text-align:center}
+.holiday-sticker strong{font-size:21px;color:#f4d58b;text-shadow:2px 2px #7b1219}
+.holiday-sticker span{position:absolute;top:-12px;right:-5px;color:#f12b35;font-size:22px}
+.holiday-note{padding:15px 12px;background:linear-gradient(90deg,#0d3827,#14251c 42%,#401016);border-top:1px solid #d5b66d;border-bottom:1px solid #d5b66d;box-shadow:inset 0 0 22px #d5b66d17}
+.holiday-note .note-star{color:#e8cb83;font-size:15px;padding:0 8px}
+.holiday-note small{display:block;margin-top:5px;color:#d5c69f;font-size:8px;letter-spacing:2px}
+.genres{background:linear-gradient(90deg,#10271c,#121215 50%,#2b1014);border-bottom-color:#6b542d}
+.section{background-image:radial-gradient(circle at 96% 3%,#17633f24,transparent 20%)}
+.section-heading .eyebrow:before{content:"✦ ";color:#e3c47b}
+.mix-card{border-color:#3b3428}
+.mix-art:after{content:"❄";position:absolute;right:10px;top:5px;color:#f0d99c;font-size:17px;opacity:.9}
+.primary-btn{background:linear-gradient(110deg,#f12b35 0 72%,#17633f 72% 100%);box-shadow:0 4px 0 #7b1118,0 0 20px #f12b3540}
+.about{background:linear-gradient(110deg,#0c0c0e,#102d20 50%,#260d11)}
+footer{background:linear-gradient(90deg,#10271c,#111114,#2a0d11)}
+@media(max-width:700px){
+ .hero-garland{height:48px;font-size:13px;padding-top:8px}
+ .holiday-sticker{width:70px;height:70px;top:30%;right:5%;font-size:10px}
+ .holiday-sticker strong{font-size:17px}
+}
+@media(prefers-reduced-motion:reduce){.snowfall{animation:none}}
