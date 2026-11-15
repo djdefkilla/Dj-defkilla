@@ -88,6 +88,25 @@
       <p class="hint" data-i18n="mixHint">Retrouve ici les mixes sélectionnés et publiés par DJ DEFKILLA.</p>
     </section>
 
+
+    <section id="mp3" class="section mp3-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">DJ DEFKILLA • EXCLUSIVITÉS</p><h2>MES <span>MP3</span></h2></div>
+        <span class="live-dot">● AUDIO</span>
+      </div>
+      <p class="hint">Des formats courts et des exclusivités à écouter directement ici.</p>
+      <div id="mp3Grid" class="mp3-grid">
+        <div class="empty-state"><p class="eyebrow">DJ DEFKILLA</p><h3>Les premiers MP3 arrivent bientôt.</h3><p>Reviens découvrir les prochains sons !</p></div>
+      </div>
+      <audio id="mp3Player" preload="metadata"></audio>
+      <div id="mp3NowPlaying" class="mp3-now-playing" hidden>
+        <div class="mp3-now-copy"><small>EN LECTURE</small><strong id="mp3NowTitle">DJ DEFKILLA</strong></div>
+        <button id="mp3PlayPause" class="mp3-control" type="button" aria-label="Pause">Ⅱ</button>
+        <input id="mp3Progress" class="mp3-progress" type="range" min="0" max="100" value="0" aria-label="Progression du morceau">
+        <span id="mp3Time" class="mp3-time">0:00</span>
+      </div>
+    </section>
+
     <section class="official-library-note">
       <p class="eyebrow">OFFICIAL DJ DEFKILLA SELECTION</p>
       <h2>UNE SÉLECTION, <span>UNE SIGNATURE.</span></h2>

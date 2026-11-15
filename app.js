@@ -196,3 +196,63 @@ document.addEventListener("DOMContentLoaded", () => {
     setState(false, "Fichier audio introuvable — vérifie le dépôt GitHub");
   });
 });
+
+
+// Official DJ DEFKILLA MP3 library. New tracks are added by the DJ, not by visitors.
+const officialMp3Tracks = [
+  // Future entry example:
+  // { id: "mp3-001", title: "Mini Mix 01", genre: "Hip-hop", duration: "03:25", file: "mp3/mini-mix-01.mp3" }
+];
+(() => {
+  const grid = document.getElementById("mp3Grid");
+  const audio = document.getElementById("mp3Player");
+  const dock = document.getElementById("mp3NowPlaying");
+  const title = document.getElementById("mp3NowTitle");
+  const toggle = document.getElementById("mp3PlayPause");
+  const progress = document.getElementById("mp3Progress");
+  const time = document.getElementById("mp3Time");
+  if (!grid || !audio) return;
+
+  const safe = value => String(value).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const fmt = seconds => {
+    if (!Number.isFinite(seconds)) return "0:00";
+    const m = Math.floor(seconds / 60), s = Math.floor(seconds % 60);
+    return `${m}:${String(s).padStart(2,"0")}`;
+  };
+
+  if (officialMp3Tracks.length) {
+    grid.innerHTML = officialMp3Tracks.map((track, index) => `
+      <article class="mp3-card">
+        <div class="mp3-art"><span>DFK</span><small>MP3 EXCLUSIVE</small></div>
+        <div class="mp3-card-info"><h3>${safe(track.title)}</h3><p>${safe(track.genre || "DJ DEFKILLA")} · ${safe(track.duration || "MP3")}</p></div>
+        <button class="mp3-card-play" type="button" data-mp3-play="${safe(track.id)}" aria-label="Écouter ${safe(track.title)}">▶</button>
+      </article>`).join("");
+  }
+
+  grid.addEventListener("click", async event => {
+    const button = event.target.closest("[data-mp3-play]");
+    if (!button) return;
+    const track = officialMp3Tracks.find(item => item.id === button.dataset.mp3Play);
+    if (!track) return;
+    if (audio.src && audio.src.endsWith(encodeURI(track.file)) && !audio.paused) {
+      audio.pause();
+      return;
+    }
+    audio.src = track.file;
+    title.textContent = track.title;
+    dock.hidden = false;
+    try { await audio.play(); }
+    catch { title.textContent = "Lecture impossible — réessaie"; }
+  });
+
+  toggle?.addEventListener("click", () => audio.paused ? audio.play() : audio.pause());
+  audio.addEventListener("play", () => { if(toggle) toggle.textContent = "Ⅱ"; });
+  audio.addEventListener("pause", () => { if(toggle) toggle.textContent = "▶"; });
+  audio.addEventListener("timeupdate", () => {
+    if (audio.duration) progress.value = String(audio.currentTime / audio.duration * 100);
+    time.textContent = `${fmt(audio.currentTime)} / ${fmt(audio.duration)}`;
+  });
+  progress?.addEventListener("input", () => {
+    if (audio.duration) audio.currentTime = Number(progress.value) / 100 * audio.duration;
+  });
+})();

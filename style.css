@@ -175,3 +175,25 @@ footer{background:linear-gradient(90deg,#10271c,#111114,#2a0d11)}
 .official-library-note h2{font-size:clamp(28px,5vw,44px);line-height:1.05;margin:10px 0}
 .official-library-note h2 span{color:var(--red)}
 .official-library-note p:last-child{max-width:620px;margin:12px auto 0;color:#b8b8bf;font-size:13px;line-height:1.7}
+
+
+/* V11 — official MP3 mini-mix library */
+.mp3-section{background:linear-gradient(180deg,#0d0d10,#151014 55%,#0d0d10)}
+.mp3-section .section-heading h2 span{color:#f12b35}
+.mp3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:14px;margin-top:22px}
+.mp3-card{display:grid;grid-template-columns:78px minmax(0,1fr) 42px;align-items:center;gap:13px;padding:12px;background:#17171b;border:1px solid #382329;border-radius:9px;box-shadow:0 8px 22px #0004}
+.mp3-art{width:78px;height:78px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 45%,#3d171c,#09090b 72%);border:1px solid #7c2630;color:#fff;transform:rotate(-2deg);box-shadow:3px 3px 0 #7d101b}
+.mp3-art span{font:900 27px/.9 'Barlow Condensed',Impact,sans-serif;color:#f12b35;text-shadow:2px 2px #fff}
+.mp3-art small{font-size:7px;letter-spacing:1px;margin-top:7px;color:#e7d3a1}
+.mp3-card-info{min-width:0}
+.mp3-card-info h3{font-size:15px;margin:0 0 6px;color:#fff;overflow-wrap:anywhere}
+.mp3-card-info p{font-size:11px;color:#aaa;margin:0}
+.mp3-card-play,.mp3-control{width:40px;height:40px;border:0;border-radius:50%;background:#f12b35;color:white;font-weight:900;font-size:16px;cursor:pointer}
+.mp3-now-playing{position:sticky;bottom:0;z-index:9;display:grid;grid-template-columns:minmax(0,1fr) 42px minmax(70px,1.2fr) auto;align-items:center;gap:12px;padding:12px 16px;background:linear-gradient(100deg,#151518,#2b1015);border:1px solid #71313a;box-shadow:0 -6px 24px #0008;border-radius:10px;margin-top:22px}
+.mp3-now-playing[hidden]{display:none}
+.mp3-now-copy{display:flex;flex-direction:column;gap:3px;min-width:0}
+.mp3-now-copy small{font-size:8px;letter-spacing:1.5px;color:#e3c47b}
+.mp3-now-copy strong{font-size:12px;color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mp3-progress{width:100%;accent-color:#f12b35}
+.mp3-time{font-size:10px;color:#bbb;white-space:nowrap}
+@media(max-width:520px){.mp3-now-playing{grid-template-columns:minmax(0,1fr) 38px;gap:8px}.mp3-progress{grid-column:1 / 2}.mp3-time{grid-column:2;grid-row:2}}
