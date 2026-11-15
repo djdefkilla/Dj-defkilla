@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0b0d">
+  <meta name="description" content="DJ DEFKILLA — Hip-hop, R&B, Dancehall et Reggaeton.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="style.css">
+  <title>DJ DEFKILLA — Official Mixes</title>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="DJ DEFKILLA accueil">
+      <span class="brand-mark">DF</span>
+      <span>DJ <b>DEFKILLA</b></span>
+    </a>
+    <button id="installBtn" class="install-btn" hidden>Installer l'app</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-glow"></div>
+      <p class="eyebrow">OFFICIAL MIXES</p>
+      <h1>FEEL THE<br><span>BEAT.</span></h1>
+      <p class="hero-copy">Ton rendez-vous musical : Hip-hop, R&amp;B, Dancehall &amp; Reggaeton.</p>
+      <a class="primary-btn" href="#mixes">ÉCOUTER LES MIXES <span>↘</span></a>
+      <div class="hero-stamp">DJ<br>DFK</div>
+    </section>
+
+    <section class="genres" aria-label="Styles musicaux">
+      <span>HIP-HOP</span><i></i><span>R&amp;B</span><i></i><span>DANCEHALL</span><i></i><span>REGGAETON</span>
+    </section>
+
+    <section id="mixes" class="section">
+      <div class="section-heading">
+        <div><p class="eyebrow">TA SÉLECTION</p><h2>LES MIXES</h2></div>
+        <span class="live-dot">● EN LIGNE</span>
+      </div>
+      <div class="filters" id="filters">
+        <button class="filter active" data-genre="Tous">Tous</button>
+        <button class="filter" data-genre="Hip-hop">Hip-hop</button>
+        <button class="filter" data-genre="R&B">R&amp;B</button>
+        <button class="filter" data-genre="Dancehall">Dancehall</button>
+        <button class="filter" data-genre="Reggaeton">Reggaeton</button>
+      </div>
+      <div id="mixGrid" class="mix-grid"></div>
+      <p class="hint">Tes mixes seront lus depuis Mixcloud. Ajoute tes liens ci-dessous pour commencer.</p>
+    </section>
+
+    <section class="add-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">TON ESPACE DJ</p><h2>AJOUTER UN MIX</h2></div>
+        <span class="plus">+</span>
+      </div>
+      <form id="mixForm" class="mix-form">
+        <label>Nom du mix<input id="mixTitle" required maxlength="70" placeholder="Ex. Summer Dancehall Mix"></label>
+        <label>Style musical
+          <select id="mixGenre">
+            <option>Hip-hop</option><option>R&amp;B</option><option>Dancehall</option><option>Reggaeton</option>
+          </select>
+        </label>
+        <label>Lien de ton mix Mixcloud<input id="mixUrl" type="url" required placeholder="https://www.mixcloud.com/..." inputmode="url"></label>
+        <button class="primary-btn form-submit" type="submit">AJOUTER À MA LISTE <span>＋</span></button>
+      </form>
+      <p class="small-note">Note : les mixes ajoutés ici sont enregistrés dans ce navigateur uniquement. Pour les afficher automatiquement chez tous tes auditeurs, il faudra ensuite connecter une base de données ou un espace d'administration en ligne.</p>
+    </section>
+
+    <section class="about">
+      <p class="eyebrow">QUI EST DERRIÈRE LES PLATINES ?</p>
+      <h2>DJ <span>DEFKILLA</span></h2>
+      <p>Hip-hop, R&amp;B, Dancehall et Reggaeton. Une sélection, une énergie, une signature.</p>
+      <a id="contactLink" class="text-link" href="mailto:contact@example.com">CONTACTER LE DJ ↗</a>
+    </section>
+  </main>
+
+  <footer><span>© <span id="year"></span> DJ DEFKILLA</span><span>BUILT FOR THE MUSIC.</span></footer>
+
+  <div id="playerModal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="playerTitle">
+      <button class="close" data-close aria-label="Fermer">×</button>
+      <p class="eyebrow">NOW PLAYING</p>
+      <h2 id="playerTitle">DJ DEFKILLA MIX</h2>
+      <div id="playerFrame" class="player-frame"></div>
+      <p class="small-note">La lecture est fournie par Mixcloud et nécessite une connexion Internet.</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
