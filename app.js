@@ -1,15 +1,10 @@
-const STORAGE_KEY = "dj-defkilla-mixes-v1";
-const starterMixes = [];
-let mixes = loadMixes();
+// Official DJ DEFKILLA mix selection.
+// New mixes are added to this list by updating the published app; visitors cannot submit mixes.
+const mixes = [
+  // Example entry format:
+  // { id: "mix-001", title: "My new mix", genre: "Hip-hop", url: "https://www.mixcloud.com/..." }
+];
 let activeGenre = "Tous";
-
-function loadMixes() {
-  try {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    return saved ? JSON.parse(saved) : starterMixes;
-  } catch { return starterMixes; }
-}
-function saveMixes() { localStorage.setItem(STORAGE_KEY, JSON.stringify(mixes)); }
 function safeText(value) {
   return String(value).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 }
@@ -38,17 +33,6 @@ function mixcloudFeed(url) {
     return "https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=0&feed=" + encodeURIComponent(path);
   } catch { return null; }
 }
-document.getElementById("mixForm").addEventListener("submit", e => {
-  e.preventDefault();
-  const title = document.getElementById("mixTitle").value.trim();
-  const genre = document.getElementById("mixGenre").value;
-  const url = document.getElementById("mixUrl").value.trim();
-  const feed = mixcloudFeed(url);
-  if (!feed) { alert(translations[document.documentElement.lang || "fr"].invalid); return; }
-  mixes.unshift({id: crypto.randomUUID ? crypto.randomUUID() : String(Date.now()), title, genre, url});
-  saveMixes(); render(); e.target.reset();
-  alert(translations[document.documentElement.lang || "fr"].added);
-});
 document.getElementById("filters").addEventListener("click", e => {
   const btn = e.target.closest("[data-genre]");
   if (!btn) return;
@@ -103,8 +87,8 @@ const translations = {
   fr: {
     install:"Installer l'app", heroCopy:"Des sélections qui font monter la température, même en hiver. 🎄",
     enterUniverse:"ENTRER DANS L'UNIVERS", holidaySub:"GOOD MUSIC • GOOD ENERGY • HOLIDAY SEASON",
-    yourSelection:"TA SÉLECTION", mixes:"LES MIXES", emptyMix:"TES MIXTAPES ARRIVENT. Ajoute ton premier lien Mixcloud ci-dessous.", online:"● EN LIGNE", all:"Tous",
-    mixHint:"Tes mixes seront lus depuis Mixcloud. Ajoute tes liens ci-dessous pour commencer.",
+    yourSelection:"TA SÉLECTION", mixes:"LES MIXES", emptyMix:"LES PROCHAINS MIXES ARRIVENT BIENTÔT. Reste connecté à DJ DEFKILLA.", online:"● EN LIGNE", all:"Tous",
+    mixHint:"Tous les mixes de cette sélection sont choisis et publiés par DJ DEFKILLA.",
     yourDjSpace:"TON ESPACE DJ", addMix:"AJOUTER UN MIX", mixName:"Nom du mix",
     musicStyle:"Style musical", mixcloudLink:"Lien de ton mix Mixcloud", addToList:"AJOUTER À MA LISTE",
     localNote:"Note : les mixes ajoutés ici sont enregistrés dans ce navigateur uniquement. Pour les afficher automatiquement chez tous tes auditeurs, il faudra ensuite connecter une base de données ou un espace d'administration en ligne.",
@@ -116,8 +100,8 @@ const translations = {
   en: {
     install:"Install app", heroCopy:"The selections that turn up the heat, even in winter. 🎄",
     enterUniverse:"ENTER THE EXPERIENCE", holidaySub:"GOOD MUSIC • GOOD ENERGY • HOLIDAY SEASON",
-    yourSelection:"YOUR SELECTION", mixes:"MIXES", emptyMix:"YOUR MIXES WILL APPEAR HERE. Add your first Mixcloud link below.", online:"● ONLINE", all:"All",
-    mixHint:"Your mixes are played from Mixcloud. Add your links below to get started.",
+    yourSelection:"YOUR SELECTION", mixes:"MIXES", emptyMix:"NEW MIXES COMING SOON. Stay tuned to DJ DEFKILLA.", online:"● ONLINE", all:"All",
+    mixHint:"Every mix in this selection is chosen and published by DJ DEFKILLA.",
     yourDjSpace:"YOUR DJ SPACE", addMix:"ADD A MIX", mixName:"Mix title",
     musicStyle:"Music style", mixcloudLink:"Your Mixcloud mix link", addToList:"ADD TO MY LIST",
     localNote:"Note: mixes added here are saved only in this browser. To show them automatically to all listeners, a shared online database or admin area will be needed.",
@@ -129,8 +113,8 @@ const translations = {
   es: {
     install:"Instalar la app", heroCopy:"Selecciones que suben la temperatura, incluso en invierno. 🎄",
     enterUniverse:"ENTRAR EN EL UNIVERSO", holidaySub:"BUENA MÚSICA • BUENA ENERGÍA • TEMPORADA FESTIVA",
-    yourSelection:"TU SELECCIÓN", mixes:"SESIONES", emptyMix:"TUS SESIONES APARECERÁN AQUÍ. Añade tu primer enlace de Mixcloud abajo.", online:"● EN LÍNEA", all:"Todos",
-    mixHint:"Tus sesiones se reproducen desde Mixcloud. Añade tus enlaces aquí para empezar.",
+    yourSelection:"TU SELECCIÓN", mixes:"SESIONES", emptyMix:"NUEVAS SESIONES MUY PRONTO. Sigue conectado con DJ DEFKILLA.", online:"● EN LÍNEA", all:"Todos",
+    mixHint:"Todas las sesiones de esta selección son elegidas y publicadas por DJ DEFKILLA.",
     yourDjSpace:"TU ESPACIO DJ", addMix:"AÑADIR UNA SESIÓN", mixName:"Nombre de la sesión",
     musicStyle:"Estilo musical", mixcloudLink:"Enlace de tu sesión en Mixcloud", addToList:"AÑADIR A MI LISTA",
     localNote:"Nota: las sesiones añadidas aquí se guardan solo en este navegador. Para mostrarlas automáticamente a todos los oyentes, hará falta una base de datos compartida o un área de administración en línea.",

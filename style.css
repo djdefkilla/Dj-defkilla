@@ -168,3 +168,10 @@ footer{background:linear-gradient(90deg,#10271c,#111114,#2a0d11)}
 .sound-volume{grid-column:1;display:flex;align-items:center;gap:8px;color:#e3c47b;font-size:9px;font-weight:900}
 .sound-volume input{width:min(150px,42vw);accent-color:#f12b35}
 @media(max-width:380px){.sound-dock{gap:7px}.sound-toggle{min-width:92px;padding:10px 9px}.sound-volume input{width:36vw}}
+
+
+/* V10 — official read-only Mixcloud library */
+.official-library-note{padding:42px clamp(20px,6vw,70px);background:linear-gradient(110deg,#101014,#171014 55%,#10251b);border-top:1px solid #393036;border-bottom:1px solid #393036;text-align:center}
+.official-library-note h2{font-size:clamp(28px,5vw,44px);line-height:1.05;margin:10px 0}
+.official-library-note h2 span{color:var(--red)}
+.official-library-note p:last-child{max-width:620px;margin:12px auto 0;color:#b8b8bf;font-size:13px;line-height:1.7}
