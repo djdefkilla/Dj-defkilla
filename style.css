@@ -199,128 +199,194 @@ footer{background:linear-gradient(90deg,#10271c,#111114,#2a0d11)}
 @media(max-width:520px){.mp3-now-playing{grid-template-columns:minmax(0,1fr) 38px;gap:8px}.mp3-progress{grid-column:1 / 2}.mp3-time{grid-column:2;grid-row:2}}
 
 
-/* V14 — faithfully apply the approved graffiti + Christmas concept to the existing V13 layout */
-:root{--bg:#070709;--panel:#111114;--red:#f21d32;--white:#f8f5f3;--muted:#b6afb0;--gold:#e8c66d}
-body{background:#070709!important;color:var(--white)!important}
-body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 50% 0%,#40101766,transparent 45%),repeating-linear-gradient(135deg,#fff05 0 1px,transparent 1px 8px)}
-.topbar{height:76px;background:#080809f2!important;border-bottom:2px solid #67131d!important;box-shadow:0 4px 24px #000a;z-index:20}
-.brand{font-family:'Barlow Condensed',Impact,sans-serif;font-size:20px;font-weight:900;letter-spacing:2px}
-.brand-mark{width:48px;height:48px;background:linear-gradient(145deg,#ff3043,#a00016)!important;border:2px solid #fff;box-shadow:4px 4px 0 #55000b,0 0 18px #f21d3288;transform:rotate(-7deg);font-style:italic}
-.brand b{color:#ff263d!important;text-shadow:2px 2px #52000a}
-.language-select{background:#101014!important;color:#fff!important;border:1px solid #8a303a!important;border-radius:5px;padding:9px 12px}
-.install-btn{background:#e91d32!important;border:1px solid #ff7784!important;box-shadow:0 0 12px #f21d3266}
-.sound-dock{position:relative;background:linear-gradient(110deg,#09090b 0%,#210b10 52%,#071b12 100%)!important;border-top:1px solid #8c1d2a!important;border-bottom:1px solid #8c1d2a!important;padding:20px clamp(18px,4vw,48px)!important;display:grid;grid-template-columns:1fr auto;gap:12px 20px;align-items:center}
-.sound-kicker{color:#e7c978!important;letter-spacing:2.2px!important}
-.sound-copy strong{font-family:'Barlow Condensed',Impact,sans-serif;font-size:22px;letter-spacing:1px}
-.sound-toggle{background:linear-gradient(135deg,#ff3347,#c9001b)!important;border:1px solid #ff8792!important;border-radius:8px!important;min-height:54px;padding:0 24px!important;font-size:15px!important;font-weight:900;box-shadow:0 0 18px #f21d3266}
-.sound-volume{grid-column:1/-1;color:#e7c978!important;font-weight:900}
-.sound-volume input{accent-color:#f21d32!important}
-.hero{min-height:690px!important;padding:90px clamp(22px,7vw,100px) 70px!important;background:#080809!important;isolation:isolate}
-.hero-photo{width:100%!important;inset:0!important;background-position:center 30%!important;background-size:cover!important;opacity:.9!important;mask-image:linear-gradient(180deg,#000 0%,#000 65%,transparent 100%)!important;-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 65%,transparent 100%)!important}
-.hero:after{background:linear-gradient(180deg,#05050722 0%,#05050722 38%,#050507e8 85%,#070709 100%)!important}
-.hero-copy-block{max-width:700px!important;margin-top:250px!important}
-.hero h1{font-family:'Barlow Condensed',Impact,sans-serif!important;font-size:clamp(64px,12vw,126px)!important;line-height:.82!important;letter-spacing:-2px!important;text-shadow:4px 4px 0 #69000b,8px 8px 0 #000!important}
-.hero h1 span{color:#ff243b!important;-webkit-text-stroke:1px #ff7b86;text-shadow:3px 3px 0 #68000b,7px 7px 0 #000!important}
-.hero-copy{font-size:clamp(14px,2vw,20px)!important;color:#e1d9d8!important;max-width:650px!important}
-.hero .eyebrow{color:#f1d68c!important;font-size:12px!important;letter-spacing:4px!important}
-.hero-tag{top:14%!important;right:7%!important;color:#ff3449!important;font-family:Impact,sans-serif!important;font-size:32px!important;transform:rotate(-8deg)!important;text-shadow:3px 3px #000!important}
-.holiday-sticker{top:35%!important;right:5%!important;background:#075332!important;border:5px solid #e3c46c!important;color:white!important;border-radius:50%!important;width:112px;height:112px;display:grid;place-content:center;text-align:center;box-shadow:0 0 0 7px #063b29,0 0 20px #ff1c32!important;transform:rotate(9deg)!important}
-.primary-btn{background:linear-gradient(110deg,#f32137 0 75%,#075c3c 75%)!important;border:2px solid #ff8992!important;box-shadow:0 0 18px #f21d3266!important;border-radius:0!important;padding:19px 22px!important;font-size:15px!important}
-.holiday-note{background:#080809!important;border-top:1px solid #6b1c26!important;border-bottom:1px solid #6b1c26!important;color:#e8cc83!important;text-align:center;padding:16px!important;letter-spacing:2px}
-.genres{background:#111114!important;border-top:1px solid #7d202c!important;border-bottom:1px solid #7d202c!important;color:#f5eeee!important}
-.live-photo-feature{position:relative!important;min-height:320px!important;background:#09090b!important;border:2px solid #781c29!important;overflow:hidden!important}
-.live-photo-image{filter:contrast(1.12)!important}
-.live-photo-copy h2{font-family:Impact,sans-serif!important;text-shadow:3px 3px #780b17!important}
-.section,.official-library-note,.about{background:linear-gradient(145deg,#111114,#080809)!important;border-top:2px solid #c51d31!important;border-left:1px solid #4d1b22!important;border-right:1px solid #4d1b22!important;box-shadow:0 12px 30px #000b!important}
-.section{padding-top:55px!important;padding-bottom:55px!important}
-.section-heading h2,.about h2{font-family:Impact,'Barlow Condensed',sans-serif!important;text-transform:uppercase!important;font-size:clamp(40px,7vw,58px)!important;text-shadow:3px 3px #760b17!important}
-.eyebrow{color:#e9ca7c!important;letter-spacing:3px!important}
-.live-dot{color:#e9ca7c!important}
-.filter{border:1px solid #61303a!important;background:#111114!important;color:#eee!important;border-radius:3px!important}
-.filter.active,.filter:hover{background:#ed1d34!important;border-color:#ff8390!important;box-shadow:0 0 12px #f21d3266!important}
-.mix-card{background:#0d0d10!important;border:2px solid #a71b2c!important;box-shadow:0 0 0 3px #21070b,0 0 20px #f21d3233!important;border-radius:12px!important}
-.mix-art{background:linear-gradient(135deg,#080809,#340911)!important;border:1px solid #ff4356!important;border-radius:7px!important}
-.play-btn{background:#ed1d34!important;border-radius:5px!important}
-.mp3-card{background:#0d0d10!important;border:2px solid #a71b2c!important;border-radius:12px!important;box-shadow:0 0 16px #f21d3233!important}
-.mp3-art{background:linear-gradient(135deg,#080809,#340911)!important;border:1px solid #ff4356!important}
-.mp3-now-playing{background:linear-gradient(100deg,#10080a,#201014)!important;border:1px solid #e9273d!important}
-.official-library-note{background:linear-gradient(135deg,#0c0c0e,#25080d)!important}
-.about{background:linear-gradient(110deg,#071a11,#121214 55%,#2a080e)!important}
-footer{border-top:1px solid #6c1c27!important;background:#080809!important}
-.holiday-lights{filter:drop-shadow(0 0 7px #ff2538)}
-.snowfall{pointer-events:none}
-.welcome-flyer{position:fixed;inset:0;z-index:2147483647;background:#050505}
-@media(max-width:700px){.hero{min-height:650px!important;padding-top:70px!important}.hero-copy-block{margin-top:265px!important}.hero-tag{top:8%!important}.holiday-sticker{top:38%!important;right:4%!important;width:90px;height:90px}.sound-dock{grid-template-columns:1fr auto}.sound-toggle{padding:0 15px!important}.mix-grid{grid-template-columns:1fr 1fr!important}}
-@media(max-width:430px){.hero{min-height:620px!important}.hero-copy-block{margin-top:245px!important}.mix-grid{grid-template-columns:1fr!important}}
-
-
-/* V14.1 — ACTUAL GRAFFITI CHRISTMAS REDESIGN. Existing V13 sections and JS remain intact. */
-:root{--red:#f21d32;--red-hot:#ff263f;--dark:#070709;--panel:#101014;--gold:#e7ca7b;--green:#12613e}
-html,body{background:#070709!important;color:#f7f3f2!important}
-body{background-image:radial-gradient(ellipse at 50% 0%,#3b0710 0,transparent 42%),repeating-linear-gradient(0deg,#fff04 0 1px,transparent 1px 6px)!important}
-.topbar{height:78px!important;background:#08080bf5!important;border-bottom:2px solid #9e1325!important;box-shadow:0 4px 22px #e9163026!important}
-.brand{font-family:Impact,'Arial Black',sans-serif!important;font-size:22px!important;letter-spacing:2px!important;text-shadow:2px 2px #690714!important}
-.brand-mark{width:52px!important;height:52px!important;background:linear-gradient(145deg,#ff263e,#970015)!important;border:2px solid #fff!important;box-shadow:4px 4px 0 #56000b,0 0 20px #ff173d88!important;transform:rotate(-7deg)!important}
-.brand b{color:#ff263e!important;text-shadow:2px 2px #5c000b!important}
-.language-select{background:#111!important;color:#fff!important;border:1px solid #b82a3b!important;border-radius:4px!important}
-.install-btn{background:#ef1f36!important;border:1px solid #ff9aa4!important}
-.sound-dock{position:relative!important;top:auto!important;display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;gap:12px 18px!important;align-items:center!important;padding:18px clamp(16px,4vw,42px)!important;background:linear-gradient(110deg,#09090b 0%,#21080e 58%,#071a12 100%)!important;border:2px solid #a7192d!important;box-shadow:0 0 22px #ff1c3438,inset 0 0 22px #000!important}
-.sound-copy{gap:4px!important}
-.sound-kicker{font-size:10px!important;letter-spacing:2px!important;color:var(--gold)!important}
-.sound-copy strong{font-family:Impact,'Arial Black',sans-serif!important;font-size:20px!important;letter-spacing:1px!important}
-.sound-copy small{font-size:13px!important;color:#d4c9ca!important}
-.sound-toggle{min-height:54px!important;padding:0 22px!important;border-radius:7px!important;background:linear-gradient(135deg,#ff344b,#b5001b)!important;border:1px solid #ff9aa5!important;box-shadow:0 0 18px #ff203e66!important;font-weight:900!important}
-.sound-toggle.is-playing{background:linear-gradient(135deg,#176b45,#0b3d29)!important;border-color:#b7e8c9!important}
+/* ===== DJ DEFKILLA — V14 GRAFFITI CHRISTMAS FULL REDESIGN =====
+   Keeps V13 sections, order, content, language controls and player behavior. */
+:root{
+ --bg:#070709;--panel:#111115;--red:#f21d35;--red2:#a9001b;
+ --white:#f7f3f1;--muted:#c0b8b8;--gold:#e7c978;--green:#12613f;
+}
+html,body{background:#070709!important;color:var(--white)!important}
+body{
+ background:
+ radial-gradient(ellipse at 50% 4%,#4a0912 0,transparent 37%),
+ repeating-linear-gradient(135deg,rgba(255,255,255,.018) 0 1px,transparent 1px 8px),
+ #070709!important;
+}
+body:before{
+ content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.28;
+ background:
+ radial-gradient(ellipse at 12% 28%,#b5002030,transparent 25%),
+ radial-gradient(ellipse at 88% 68%,#b5002030,transparent 24%),
+ repeating-linear-gradient(0deg,transparent 0 68px,#ffffff08 69px,transparent 70px);
+}
+.topbar{
+ background:rgba(7,7,9,.97)!important;border-bottom:2px solid #a7192d!important;
+ box-shadow:0 5px 24px #e9163040!important;
+}
+.brand{font-family:Impact,"Arial Black",sans-serif!important;letter-spacing:2px!important;text-shadow:2px 2px #6b0010!important}
+.brand-mark{
+ background:linear-gradient(145deg,#ff3048,#a50019)!important;border:2px solid #fff!important;
+ box-shadow:4px 4px 0 #5b0010,0 0 18px #f21d3580!important;transform:rotate(-6deg)!important;
+}
+.brand b{color:#ff263e!important;text-shadow:2px 2px #68000e!important}
+.language-select{background:#101014!important;color:#fff!important;border:1px solid #a52a3a!important}
+.install-btn{background:linear-gradient(135deg,#ff3047,#b0001c)!important;border:1px solid #ff8996!important}
+.holiday-lights{filter:drop-shadow(0 0 7px #ff253b)!important}
+.sound-dock{
+ position:relative!important;top:auto!important;display:grid!important;
+ grid-template-columns:minmax(0,1fr) auto!important;align-items:center!important;
+ gap:10px 16px!important;padding:16px clamp(14px,4vw,42px)!important;
+ background:linear-gradient(110deg,#09090b 0%,#26090f 60%,#092016 100%)!important;
+ border-top:2px solid #9d182a!important;border-bottom:2px solid #9d182a!important;
+ box-shadow:0 0 20px #ed1b3433,inset 0 0 22px #000!important;
+}
+.sound-copy{display:flex!important;flex-direction:column!important;gap:4px!important}
+.sound-kicker{color:var(--gold)!important;font-size:10px!important;letter-spacing:2px!important}
+.sound-copy strong{font-family:Impact,"Arial Black",sans-serif!important;font-size:clamp(16px,3vw,22px)!important;letter-spacing:1px!important;color:#fff!important}
+.sound-copy small{color:#ddd!important}
+.sound-toggle{
+ min-height:52px!important;padding:0 20px!important;border-radius:7px!important;
+ background:linear-gradient(135deg,#ff344c,#b0001c)!important;color:#fff!important;
+ border:1px solid #ff9aa5!important;box-shadow:0 0 17px #f21d3566!important;font-weight:900!important;
+}
+.sound-toggle.is-playing{background:linear-gradient(135deg,#176b45,#0b3d29)!important;border-color:#c1efd2!important}
 .sound-volume{grid-column:1/-1!important;display:flex!important;align-items:center!important;gap:12px!important;color:var(--gold)!important;font-weight:900!important}
-.sound-volume input{flex:1!important;max-width:330px!important;accent-color:#ff233b!important}
-.hero{min-height:640px!important;padding:320px clamp(22px,6vw,76px) 48px!important;display:flex!important;align-items:flex-end!important;isolation:isolate!important;background:linear-gradient(180deg,#09090b 0%,#19080c 100%)!important;border:1px solid #7f1826!important;overflow:hidden!important}
-.hero-photo{inset:0!important;width:100%!important;height:100%!important;background-position:center 26%!important;background-size:cover!important;opacity:.9!important;mask-image:linear-gradient(180deg,#000 0%,#000 63%,transparent 100%)!important;-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 63%,transparent 100%)!important}
-.hero:after{content:""!important;position:absolute!important;inset:0!important;z-index:0!important;pointer-events:none!important;background:linear-gradient(180deg,#05050705 0%,#05050718 38%,#050507db 74%,#070709 100%),linear-gradient(90deg,#07070933,#07070900 50%,#07070955)!important}
-.hero-glow{z-index:0!important;background:#f21d32!important;opacity:.16!important}
-.hero-copy-block{position:relative!important;z-index:2!important;max-width:780px!important;margin:0!important}
-.hero h1{font-family:Impact,'Arial Black',sans-serif!important;font-size:clamp(64px,13vw,132px)!important;line-height:.78!important;letter-spacing:-2px!important;text-transform:uppercase!important;color:#fff!important;text-shadow:4px 4px 0 #a50018,8px 8px 0 #050505!important}
-.hero h1 span{display:block!important;color:#ff243c!important;-webkit-text-stroke:1px #ff8794!important;text-shadow:4px 4px 0 #65000c,8px 8px 0 #050505!important}
-.hero .eyebrow{color:#e9cc80!important;font-size:12px!important;letter-spacing:4px!important;text-shadow:0 0 8px #f21d32!important}
-.hero-copy{max-width:720px!important;color:#eee5e5!important;font-size:clamp(15px,2.5vw,22px)!important;line-height:1.5!important}
-.hero-tag{right:7%!important;top:17%!important;bottom:auto!important;font-family:Impact,'Arial Black',sans-serif!important;font-size:clamp(23px,4vw,38px)!important;color:#fff!important;transform:rotate(-8deg)!important;text-shadow:3px 3px #a80019,5px 5px #000!important}
-.hero-tag b{color:#ff253e!important;font-size:1.18em!important}
-.holiday-sticker{right:5%!important;top:43%!important;bottom:auto!important;width:102px!important;height:102px!important;display:grid!important;place-content:center!important;text-align:center!important;border-radius:50%!important;background:#075333!important;border:5px solid #e7ca7b!important;box-shadow:0 0 0 5px #063d29,0 0 24px #f21d32!important;color:#fff!important;font-weight:900!important;transform:rotate(8deg)!important}
-.primary-btn{display:flex!important;align-items:center!important;justify-content:space-between!important;max-width:620px!important;min-height:76px!important;padding:18px 26px!important;background:linear-gradient(105deg,#f21d32 0 76%,#12613e 76% 100%)!important;border:2px solid #ff9aa5!important;border-radius:0!important;box-shadow:0 0 20px #f21d3266!important;color:#fff!important;font-family:Impact,'Arial Black',sans-serif!important;font-size:clamp(19px,4vw,30px)!important;letter-spacing:1px!important}
-.holiday-note{background:#09090b!important;border-top:1px solid #8e1828!important;border-bottom:1px solid #8e1828!important;color:var(--gold)!important}
-.genres{background:#101014!important;border-top:1px solid #721724!important;border-bottom:1px solid #721724!important;color:#fff!important}
-.live-photo-feature{min-height:300px!important;background:#08080a!important;border:1px solid #771725!important;box-shadow:inset 0 0 50px #f21d3218!important}
-.live-photo-image{width:78%!important;opacity:.9!important;mask-image:linear-gradient(90deg,transparent 0%,#000 20%,#000 100%)!important;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 20%,#000 100%)!important}
-.live-photo-copy h2{font-family:Impact,'Arial Black',sans-serif!important;font-size:clamp(36px,6vw,62px)!important;text-shadow:3px 3px #9b0016!important}
-.section,.official-library-note,.about{background:linear-gradient(145deg,#121216,#08080a)!important;border:1px solid #5a1722!important;border-top:3px solid #d91b32!important;box-shadow:0 12px 28px #000b!important}
-.section{padding:clamp(28px,5vw,58px) clamp(18px,5vw,58px)!important}
-.section-heading h2,.about h2{font-family:Impact,'Arial Black',sans-serif!important;font-size:clamp(38px,7vw,60px)!important;text-transform:uppercase!important;text-shadow:3px 3px 0 #800b19!important;letter-spacing:1px!important}
+.sound-volume input{flex:1!important;max-width:330px!important;accent-color:#ff263f!important}
+
+/* Main hero: the supplied DJ portrait becomes the full graffiti-club backdrop. */
+.hero{
+ position:relative!important;isolation:isolate!important;overflow:hidden!important;
+ min-height:690px!important;padding:340px clamp(20px,6vw,82px) 42px!important;
+ display:flex!important;align-items:flex-end!important;
+ background:linear-gradient(180deg,#08080a,#16070b)!important;
+ border-top:1px solid #8c1425!important;border-bottom:2px solid #b51a30!important;
+}
+.hero-photo{
+ position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+ background-image:url("dj-defkilla-live-bw.png")!important;background-size:cover!important;
+ background-position:center 24%!important;opacity:.92!important;
+ -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 57%,transparent 100%)!important;
+ mask-image:linear-gradient(180deg,#000 0%,#000 57%,transparent 100%)!important;
+}
+.hero:after{
+ content:""!important;position:absolute!important;inset:0!important;z-index:0!important;pointer-events:none!important;
+ background:
+ linear-gradient(180deg,rgba(5,5,7,.02) 0%,rgba(5,5,7,.05) 36%,rgba(5,5,7,.82) 70%,#070709 100%),
+ linear-gradient(90deg,rgba(5,5,7,.24),transparent 55%,rgba(5,5,7,.25))!important;
+}
+.hero:before{
+ content:"DJ DEFKILLA";position:absolute;z-index:1;top:18px;left:4%;right:4%;
+ font-family:Impact,"Arial Black",sans-serif;font-size:clamp(32px,8vw,78px);
+ font-style:italic;font-weight:1000;letter-spacing:-2px;text-align:center;
+ color:rgba(255,25,55,.10);-webkit-text-stroke:1px rgba(255,35,58,.34);
+ text-shadow:0 0 18px #f21d3522;pointer-events:none;transform:rotate(-3deg);
+}
+.hero-glow{z-index:0!important;background:#e21f2d!important;filter:blur(150px)!important;opacity:.18!important}
+.hero-copy-block{position:relative!important;z-index:3!important;max-width:760px!important;margin:0!important}
+.hero .eyebrow{color:var(--gold)!important;letter-spacing:4px!important;font-weight:900!important;text-shadow:0 0 9px #f21d35!important}
+.hero h1{
+ margin:8px 0 14px!important;font-family:Impact,"Arial Black",sans-serif!important;
+ font-size:clamp(64px,13vw,132px)!important;line-height:.78!important;letter-spacing:-2px!important;
+ text-transform:uppercase!important;color:#fff!important;
+ -webkit-text-stroke:1px #fff!important;
+ text-shadow:4px 4px 0 #9e0018,8px 8px 0 #050505,0 0 22px #f21d3555!important;
+}
+.hero h1 span{
+ color:#ff203b!important;-webkit-text-stroke:1px #ff9aa5!important;
+ text-shadow:4px 4px 0 #71000e,8px 8px 0 #050505!important;
+}
+.hero-copy{max-width:700px!important;color:#f0e9e8!important;font-size:clamp(15px,2.4vw,21px)!important;line-height:1.5!important}
+.hero-tag{
+ position:absolute!important;z-index:3!important;top:12%!important;right:7%!important;bottom:auto!important;
+ color:#fff!important;font-family:Impact,"Arial Black",sans-serif!important;font-size:clamp(23px,4vw,38px)!important;
+ line-height:.9!important;text-align:right!important;transform:rotate(-7deg)!important;
+ text-shadow:3px 3px 0 #b0001d,6px 6px 0 #000!important;
+}
+.hero-tag b{color:#ff263e!important;font-size:1.15em!important}
+.holiday-sticker{
+ position:absolute!important;z-index:4!important;right:5%!important;top:32%!important;bottom:auto!important;
+ width:92px!important;height:92px!important;border-radius:50%!important;display:flex!important;
+ flex-direction:column!important;align-items:center!important;justify-content:center!important;
+ background:#075333!important;border:4px solid #e7ca7b!important;
+ box-shadow:0 0 0 5px #063d29,0 0 24px #f21d32!important;
+ color:#fff!important;font-weight:900!important;transform:rotate(8deg)!important;
+}
+.holiday-sticker strong{color:#ffe09a!important;text-shadow:2px 2px #69000c!important}
+.primary-btn{
+ display:flex!important;align-items:center!important;justify-content:space-between!important;
+ max-width:620px!important;min-height:74px!important;padding:17px 24px!important;
+ border:2px solid #ff9aa5!important;border-radius:0!important;
+ background:linear-gradient(105deg,#f21d35 0 77%,#12613f 77% 100%)!important;
+ color:#fff!important;font-family:Impact,"Arial Black",sans-serif!important;
+ font-size:clamp(19px,4vw,29px)!important;letter-spacing:1px!important;
+ box-shadow:0 0 22px #f21d3566,5px 5px 0 #5b0010!important;
+}
+.holiday-note{
+ background:linear-gradient(90deg,#07190f,#111114 48%,#26080d)!important;
+ border-top:1px solid #a21b2b!important;border-bottom:1px solid #a21b2b!important;
+ color:#f0d58d!important;text-align:center!important;
+}
+.genres{background:#101014!important;border-top:1px solid #7d1726!important;border-bottom:1px solid #7d1726!important;color:#fff!important}
+.live-photo-feature{
+ min-height:330px!important;background:linear-gradient(120deg,#09090b,#26090f)!important;
+ border-top:2px solid #8e1829!important;border-bottom:2px solid #8e1829!important;
+}
+.live-photo-feature:after{background:linear-gradient(90deg,#08080b 0%,rgba(8,8,11,.78) 30%,rgba(8,8,11,.08) 100%)!important}
+.live-photo-copy h2{font-family:Impact,"Arial Black",sans-serif!important;text-shadow:3px 3px #8e0017!important}
+.live-photo-copy h2 span{color:#ff263e!important}
+.section,.official-library-note,.about{
+ background:linear-gradient(145deg,#151519,#08080b)!important;
+ border:1px solid #5c1724!important;border-top:3px solid #c51b32!important;
+ box-shadow:0 12px 30px #000b!important;
+}
+.section{padding-top:clamp(34px,6vw,70px)!important;padding-bottom:clamp(34px,6vw,70px)!important}
+.section-heading h2,.about h2{
+ font-family:Impact,"Arial Black",sans-serif!important;font-size:clamp(38px,7vw,60px)!important;
+ text-transform:uppercase!important;letter-spacing:1px!important;color:#fff!important;
+ text-shadow:3px 3px 0 #790b19,5px 5px 0 #000!important;
+}
 .section-heading h2 span,.about h2 span{color:#ff263e!important}
-.eyebrow{color:var(--gold)!important;letter-spacing:3px!important}
-.filters .filter,.filter{border:1px solid #71303b!important;background:#151519!important;color:#eee!important;border-radius:3px!important}
-.filter.active{background:#e91e35!important;border-color:#ff9ba5!important;box-shadow:0 0 12px #f21d3266!important}
+.eyebrow{color:#e7ca7b!important;letter-spacing:3px!important}
+.filters .filter,.filter{
+ background:#151519!important;color:#fff!important;border:1px solid #71303b!important;
+ border-radius:3px!important;text-transform:uppercase!important;font-weight:800!important;
+}
+.filter.active{background:#ed1d35!important;border-color:#ff9aa5!important;box-shadow:0 0 12px #f21d3566!important}
 .mix-grid,.mp3-grid{gap:16px!important}
-.mix-card,.mp3-card{background:linear-gradient(145deg,#1a1a1f,#09090b)!important;border:2px solid #a51c30!important;border-radius:9px!important;box-shadow:0 0 0 3px #24080d,0 0 20px #f21d322e!important}
-.mix-art,.mp3-art{background:radial-gradient(circle at 50% 40%,#751323,#09090b 75%)!important;border:1px solid #ff465a!important;border-radius:5px!important}
-.play-btn,.mp3-card-play,.mp3-control{background:linear-gradient(135deg,#ff3048,#ae0019)!important;border:1px solid #ff9aa5!important;box-shadow:0 0 12px #f21d3266!important}
-.official-library-note{background:linear-gradient(120deg,#17171b,#28080e)!important}
-.about{background:linear-gradient(120deg,#071d13,#141418 55%,#29080e)!important}
-footer{background:#08080a!important;border-top:1px solid #7c1827!important}
-.holiday-lights{filter:drop-shadow(0 0 6px #ff253b)!important}
+.mix-card,.mp3-card{
+ background:linear-gradient(145deg,#1b1b20,#09090c)!important;
+ border:2px solid #a51c30!important;border-radius:8px!important;
+ box-shadow:0 0 0 3px #26080e,0 0 18px #f21d3533!important;
+}
+.mix-art,.mp3-art{
+ background:radial-gradient(circle at 50% 42%,#801526,#09090c 76%)!important;
+ border:1px solid #ff4b5f!important;border-radius:5px!important;
+}
+.play-btn,.mp3-card-play,.mp3-control{
+ background:linear-gradient(135deg,#ff3048,#a9001b)!important;
+ border:1px solid #ff9aa5!important;box-shadow:0 0 13px #f21d3566!important;
+}
+.mix-card h3,.mp3-card-info h3{font-family:Impact,"Arial Black",sans-serif!important;letter-spacing:.4px!important}
+.official-library-note{background:linear-gradient(120deg,#151519,#27080d)!important}
+.about{background:linear-gradient(120deg,#071b12,#141418 55%,#29080e)!important}
+footer{background:#08080a!important;border-top:1px solid #7e1727!important}
+.mp3-now-playing{background:linear-gradient(100deg,#10080a,#211015)!important;border:1px solid #e9273d!important}
+.holiday-lights,.hero-garland{filter:drop-shadow(0 0 7px #ff253b)!important}
 .snowfall{pointer-events:none!important}
 @media(max-width:700px){
- .hero{min-height:680px!important;padding:340px 22px 36px!important}
- .hero-photo{background-position:center 22%!important}
- .hero-copy-block{margin:0!important}
- .hero-tag{top:8%!important;right:5%!important}
- .holiday-sticker{top:35%!important;right:4%!important;width:84px!important;height:84px!important;font-size:12px!important}
+ .hero{min-height:690px!important;padding:345px 20px 34px!important}
+ .hero-photo{background-position:center 23%!important}
+ .hero-tag{top:7%!important;right:5%!important}
+ .holiday-sticker{top:31%!important;right:4%!important;width:82px!important;height:82px!important;font-size:11px!important}
+ .hero h1{font-size:clamp(58px,14vw,88px)!important}
  .sound-dock{grid-template-columns:minmax(0,1fr) auto!important}
  .sound-toggle{padding:0 14px!important;font-size:13px!important}
  .mix-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
 }
 @media(max-width:430px){
- .hero{min-height:650px!important;padding:320px 18px 32px!important}
- .hero h1{font-size:clamp(56px,15vw,82px)!important}
+ .hero{min-height:650px!important;padding:320px 17px 30px!important}
+ .hero h1{font-size:clamp(54px,14.5vw,76px)!important}
  .hero-copy{font-size:15px!important}
  .mix-grid{grid-template-columns:1fr 1fr!important}
- .sound-copy strong{font-size:17px!important}
+ .sound-copy strong{font-size:16px!important}
 }

@@ -160,7 +160,6 @@ document.addEventListener("DOMContentLoaded", () => {
   audio.loop = true;
   audio.preload = "auto";
   audio.volume = Number(volume.value || 0.22);
-  audio.load();
 
   const setState = (playing, message) => {
     toggle.textContent = playing ? "Ⅱ PAUSE" : "▶ ÉCOUTER";
@@ -194,8 +193,11 @@ document.addEventListener("DOMContentLoaded", () => {
   audio.addEventListener("play", () => setState(true, "Ambiance activée"));
   audio.addEventListener("pause", () => setState(false, "Musique en pause"));
   audio.addEventListener("ended", () => setState(false, "Musique terminée"));
+  audio.addEventListener("loadedmetadata", () => {
+    if (audio.duration) status.textContent = "Jingle Bells • " + Math.floor(audio.duration/60) + ":" + String(Math.floor(audio.duration%60)).padStart(2,"0");
+  });
   audio.addEventListener("error", () => {
-    setState(false, "Fichier audio introuvable — vérifie le dépôt GitHub");
+    setState(false, "Erreur audio — fichier MP3 non chargé");
   });
 });
 
