@@ -17,15 +17,15 @@ function render() {
   const list = mixes.filter(m => activeGenre === "Tous" || m.genre === activeGenre);
   const grid = document.getElementById("mixGrid");
   if (!list.length) {
-    grid.innerHTML = `<div class="empty-state"><p class="eyebrow">BIENTÔT ICI</p><h3>TES MIXTAPES ARRIVENT.</h3><p class="small-note">Ajoute ton premier lien Mixcloud dans la section ci-dessous.</p></div>`;
+    grid.innerHTML = `<div class="empty-state"><p class="eyebrow">DJ DEFKILLA</p><h3>${translations[document.documentElement.lang || "fr"].emptyMix}</h3></div>`;
     return;
   }
   grid.innerHTML = list.map(m => `
     <article class="mix-card">
       <div><div class="mix-art">DFK</div><h3>${safeText(m.title)}</h3><div class="mix-meta">${safeText(m.genre)} · DJ DEFKILLA</div></div>
       <div class="card-actions">
-        <button class="play-btn" data-play="${safeText(m.id)}">▶ ÉCOUTER</button>
-        <button class="share-btn" data-share="${safeText(m.id)}">Partager ↗</button>
+        <button class="play-btn" data-play="${safeText(m.id)}">${translations[document.documentElement.lang || "fr"].play}</button>
+        <button class="share-btn" data-share="${safeText(m.id)}">${translations[document.documentElement.lang || "fr"].share}</button>
       </div>
     </article>`).join("");
 }
@@ -44,10 +44,10 @@ document.getElementById("mixForm").addEventListener("submit", e => {
   const genre = document.getElementById("mixGenre").value;
   const url = document.getElementById("mixUrl").value.trim();
   const feed = mixcloudFeed(url);
-  if (!feed) { alert("Entre un lien de mix publié sur Mixcloud (https://www.mixcloud.com/...)."); return; }
+  if (!feed) { alert(translations[document.documentElement.lang || "fr"].invalid); return; }
   mixes.unshift({id: crypto.randomUUID ? crypto.randomUUID() : String(Date.now()), title, genre, url});
   saveMixes(); render(); e.target.reset();
-  alert("Mix ajouté à cette liste sur cet appareil !");
+  alert(translations[document.documentElement.lang || "fr"].added);
 });
 document.getElementById("filters").addEventListener("click", e => {
   const btn = e.target.closest("[data-genre]");
@@ -73,7 +73,7 @@ document.getElementById("mixGrid").addEventListener("click", async e => {
   if (share) {
     try {
       if (navigator.share) await navigator.share({title: mix.title, text: "Écoute ce mix de DJ DEFKILLA", url: mix.url});
-      else { await navigator.clipboard.writeText(mix.url); alert("Lien copié !"); }
+      else { await navigator.clipboard.writeText(mix.url); alert(translations[document.documentElement.lang || "fr"].copied); }
     } catch {}
   }
 });
@@ -83,7 +83,6 @@ document.querySelectorAll("[data-close]").forEach(el => el.addEventListener("cli
   document.getElementById("playerFrame").innerHTML = "";
 }));
 document.getElementById("year").textContent = new Date().getFullYear();
-render();
 
 let deferredPrompt;
 const installBtn = document.getElementById("installBtn");
@@ -97,3 +96,68 @@ installBtn.addEventListener("click", async () => {
 if ("serviceWorker" in navigator) window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(()=>{}));
 
 window.addEventListener("load", () => { const splash = document.getElementById("splash"); if (splash) setTimeout(() => splash.remove(), 3400); });
+
+
+// Automatic language: use the visitor's browser language, with a manual FR/EN/ES switch.
+const translations = {
+  fr: {
+    install:"Installer l'app", heroCopy:"Des sélections qui font monter la température, même en hiver. 🎄",
+    enterUniverse:"ENTRER DANS L'UNIVERS", holidaySub:"GOOD MUSIC • GOOD ENERGY • HOLIDAY SEASON",
+    yourSelection:"TA SÉLECTION", mixes:"LES MIXES", emptyMix:"TES MIXTAPES ARRIVENT. Ajoute ton premier lien Mixcloud ci-dessous.", online:"● EN LIGNE", all:"Tous",
+    mixHint:"Tes mixes seront lus depuis Mixcloud. Ajoute tes liens ci-dessous pour commencer.",
+    yourDjSpace:"TON ESPACE DJ", addMix:"AJOUTER UN MIX", mixName:"Nom du mix",
+    musicStyle:"Style musical", mixcloudLink:"Lien de ton mix Mixcloud", addToList:"AJOUTER À MA LISTE",
+    localNote:"Note : les mixes ajoutés ici sont enregistrés dans ce navigateur uniquement. Pour les afficher automatiquement chez tous tes auditeurs, il faudra ensuite connecter une base de données ou un espace d'administration en ligne.",
+    aboutEyebrow:"QUI EST DERRIÈRE LES PLATINES ?", aboutText:"Hip-hop, R&B, Dancehall et Reggaeton. Une sélection, une énergie, une signature.",
+    contact:"CONTACTER LE DJ ↗", playerNote:"La lecture est fournie par Mixcloud et nécessite une connexion Internet.",
+    close:"Fermer", play:"▶ ÉCOUTER", share:"Partager ↗", invalid:"Entre un lien de mix publié sur Mixcloud (https://www.mixcloud.com/...).",
+    added:"Mix ajouté à cette liste sur cet appareil !", copied:"Lien copié !"
+  },
+  en: {
+    install:"Install app", heroCopy:"The selections that turn up the heat, even in winter. 🎄",
+    enterUniverse:"ENTER THE EXPERIENCE", holidaySub:"GOOD MUSIC • GOOD ENERGY • HOLIDAY SEASON",
+    yourSelection:"YOUR SELECTION", mixes:"MIXES", emptyMix:"YOUR MIXES WILL APPEAR HERE. Add your first Mixcloud link below.", online:"● ONLINE", all:"All",
+    mixHint:"Your mixes are played from Mixcloud. Add your links below to get started.",
+    yourDjSpace:"YOUR DJ SPACE", addMix:"ADD A MIX", mixName:"Mix title",
+    musicStyle:"Music style", mixcloudLink:"Your Mixcloud mix link", addToList:"ADD TO MY LIST",
+    localNote:"Note: mixes added here are saved only in this browser. To show them automatically to all listeners, a shared online database or admin area will be needed.",
+    aboutEyebrow:"WHO'S BEHIND THE DECKS?", aboutText:"Hip-hop, R&B, Dancehall and Reggaeton. One selection, one energy, one signature.",
+    contact:"CONTACT THE DJ ↗", playerNote:"Playback is provided by Mixcloud and requires an internet connection.",
+    close:"Close", play:"▶ LISTEN", share:"Share ↗", invalid:"Enter a Mixcloud mix URL (https://www.mixcloud.com/...).",
+    added:"Mix added to this list on this device!", copied:"Link copied!"
+  },
+  es: {
+    install:"Instalar la app", heroCopy:"Selecciones que suben la temperatura, incluso en invierno. 🎄",
+    enterUniverse:"ENTRAR EN EL UNIVERSO", holidaySub:"BUENA MÚSICA • BUENA ENERGÍA • TEMPORADA FESTIVA",
+    yourSelection:"TU SELECCIÓN", mixes:"SESIONES", emptyMix:"TUS SESIONES APARECERÁN AQUÍ. Añade tu primer enlace de Mixcloud abajo.", online:"● EN LÍNEA", all:"Todos",
+    mixHint:"Tus sesiones se reproducen desde Mixcloud. Añade tus enlaces aquí para empezar.",
+    yourDjSpace:"TU ESPACIO DJ", addMix:"AÑADIR UNA SESIÓN", mixName:"Nombre de la sesión",
+    musicStyle:"Estilo musical", mixcloudLink:"Enlace de tu sesión en Mixcloud", addToList:"AÑADIR A MI LISTA",
+    localNote:"Nota: las sesiones añadidas aquí se guardan solo en este navegador. Para mostrarlas automáticamente a todos los oyentes, hará falta una base de datos compartida o un área de administración en línea.",
+    aboutEyebrow:"¿QUIÉN ESTÁ DETRÁS DE LOS PLATOS?", aboutText:"Hip-hop, R&B, Dancehall y Reggaeton. Una selección, una energía, una firma.",
+    contact:"CONTACTAR CON EL DJ ↗", playerNote:"La reproducción se ofrece mediante Mixcloud y requiere conexión a Internet.",
+    close:"Cerrar", play:"▶ ESCUCHAR", share:"Compartir ↗", invalid:"Introduce un enlace de Mixcloud (https://www.mixcloud.com/...).",
+    added:"¡Sesión añadida a esta lista en este dispositivo!", copied:"¡Enlace copiado!"
+  }
+};
+function applyLanguage(lang) {
+  const chosen = translations[lang] ? lang : "fr";
+  document.documentElement.lang = chosen;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const value = translations[chosen][el.dataset.i18n];
+    if (value) el.textContent = value;
+  });
+  const install = document.getElementById("installBtn");
+  if (install) install.textContent = translations[chosen].install;
+  const close = document.querySelector(".close");
+  if (close) close.setAttribute("aria-label", translations[chosen].close);
+  localStorage.setItem("dj-defkilla-language", chosen);
+  const select = document.getElementById("languageSelect");
+  if (select) select.value = chosen;
+  render();
+}
+const languageSelect = document.getElementById("languageSelect");
+const savedLanguage = localStorage.getItem("dj-defkilla-language");
+const browserLanguage = (navigator.language || "fr").slice(0,2).toLowerCase();
+applyLanguage(savedLanguage || (translations[browserLanguage] ? browserLanguage : "fr"));
+languageSelect?.addEventListener("change", () => applyLanguage(languageSelect.value));

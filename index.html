@@ -32,7 +32,7 @@
       <span class="brand-mark">DF</span>
       <span>DJ <b>DEFKILLA</b></span>
     </a>
-    <button id="installBtn" class="install-btn" hidden>Installer l'app</button>
+    <div class="header-actions"><select id="languageSelect" class="language-select" aria-label="Language"><option value="fr">FR</option><option value="en">EN</option><option value="es">ES</option></select><button id="installBtn" class="install-btn" hidden>Installer l'app</button></div>
   </header>
 
   <main>
@@ -41,56 +41,56 @@
       <div class="hero-copy-block">
         <p class="eyebrow">✦ CHRISTMAS EDITION ✦</p>
         <h1>DJ <span>DEFKILLA</span></h1>
-        <p class="hero-copy">HIP-HOP. R&amp;B. DANCEHALL. REGGAETON.<br>Des sélections qui font monter la température, même en hiver. 🎄</p>
-        <a class="primary-btn" href="#mixes">ENTRER DANS L'UNIVERS <span>↘</span></a>
+        <p class="hero-copy"><span data-i18n="genresLine">HIP-HOP. R&amp;B. DANCEHALL. REGGAETON.</span><br><span data-i18n="heroCopy">Des sélections qui font monter la température, même en hiver. 🎄</span></p>
+        <a class="primary-btn" href="#mixes"><span data-i18n="enterUniverse">ENTRER DANS L'UNIVERS</span> <span>↘</span></a>
       </div>
       <div class="hero-tag">OLD SCHOOL<br><b>NEW ENERGY</b></div><div class="holiday-sticker" aria-hidden="true">MERRY<br><strong>BEATS</strong><span>✦</span></div>
     </section>
 
-    <div class="holiday-note"><span class="note-star">✦</span> <b>DJ DEFKILLA — CHRISTMAS VIBES</b> <span class="note-star">✦</span><small>GOOD MUSIC • GOOD ENERGY • HOLIDAY SEASON</small></div>
+    <div class="holiday-note"><span class="note-star">✦</span> <b>DJ DEFKILLA — CHRISTMAS VIBES</b> <span class="note-star">✦</span><small data-i18n="holidaySub">GOOD MUSIC • GOOD ENERGY • HOLIDAY SEASON</small></div>
     <section class="genres" aria-label="Styles musicaux">
       <span>HIP-HOP</span><i></i><span>R&amp;B</span><i></i><span>DANCEHALL</span><i></i><span>REGGAETON</span>
     </section>
 
     <section id="mixes" class="section">
       <div class="section-heading">
-        <div><p class="eyebrow">TA SÉLECTION</p><h2>LES MIXES</h2></div>
-        <span class="live-dot">● EN LIGNE</span>
+        <div><p class="eyebrow" data-i18n="yourSelection">TA SÉLECTION</p><h2 data-i18n="mixes">LES MIXES</h2></div>
+        <span class="live-dot" data-i18n="online">● EN LIGNE</span>
       </div>
       <div class="filters" id="filters">
-        <button class="filter active" data-genre="Tous">Tous</button>
+        <button class="filter active" data-genre="Tous" data-i18n="all">Tous</button>
         <button class="filter" data-genre="Hip-hop">Hip-hop</button>
         <button class="filter" data-genre="R&B">R&amp;B</button>
         <button class="filter" data-genre="Dancehall">Dancehall</button>
         <button class="filter" data-genre="Reggaeton">Reggaeton</button>
       </div>
       <div id="mixGrid" class="mix-grid"></div>
-      <p class="hint">Tes mixes seront lus depuis Mixcloud. Ajoute tes liens ci-dessous pour commencer.</p>
+      <p class="hint" data-i18n="mixHint">Tes mixes seront lus depuis Mixcloud. Ajoute tes liens ci-dessous pour commencer.</p>
     </section>
 
     <section class="add-section">
       <div class="section-heading">
-        <div><p class="eyebrow">TON ESPACE DJ</p><h2>AJOUTER UN MIX</h2></div>
+        <div><p class="eyebrow" data-i18n="yourDjSpace">TON ESPACE DJ</p><h2 data-i18n="addMix">AJOUTER UN MIX</h2></div>
         <span class="plus">+</span>
       </div>
       <form id="mixForm" class="mix-form">
-        <label>Nom du mix<input id="mixTitle" required maxlength="70" placeholder="Ex. Summer Dancehall Mix"></label>
-        <label>Style musical
+        <label><span data-i18n="mixName">Nom du mix</span><input id="mixTitle" required maxlength="70" placeholder="Ex. Summer Dancehall Mix"></label>
+        <label><span data-i18n="musicStyle">Style musical</span>
           <select id="mixGenre">
             <option>Hip-hop</option><option>R&amp;B</option><option>Dancehall</option><option>Reggaeton</option>
           </select>
         </label>
-        <label>Lien de ton mix Mixcloud<input id="mixUrl" type="url" required placeholder="https://www.mixcloud.com/..." inputmode="url"></label>
-        <button class="primary-btn form-submit" type="submit">AJOUTER À MA LISTE <span>＋</span></button>
+        <label><span data-i18n="mixcloudLink">Lien de ton mix Mixcloud</span><input id="mixUrl" type="url" required placeholder="https://www.mixcloud.com/..." inputmode="url"></label>
+        <button class="primary-btn form-submit" type="submit"><span data-i18n="addToList">AJOUTER À MA LISTE</span> <span>＋</span></button>
       </form>
-      <p class="small-note">Note : les mixes ajoutés ici sont enregistrés dans ce navigateur uniquement. Pour les afficher automatiquement chez tous tes auditeurs, il faudra ensuite connecter une base de données ou un espace d'administration en ligne.</p>
+      <p class="small-note" data-i18n="localNote">Note : les mixes ajoutés ici sont enregistrés dans ce navigateur uniquement. Pour les afficher automatiquement chez tous tes auditeurs, il faudra ensuite connecter une base de données ou un espace d'administration en ligne.</p>
     </section>
 
     <section class="about">
-      <p class="eyebrow">QUI EST DERRIÈRE LES PLATINES ?</p>
+      <p class="eyebrow" data-i18n="aboutEyebrow">QUI EST DERRIÈRE LES PLATINES ?</p>
       <h2>DJ <span>DEFKILLA</span></h2>
-      <p>Hip-hop, R&amp;B, Dancehall et Reggaeton. Une sélection, une énergie, une signature.</p>
-      <a id="contactLink" class="text-link" href="mailto:contact@example.com">CONTACTER LE DJ ↗</a>
+      <p data-i18n="aboutText">Hip-hop, R&amp;B, Dancehall et Reggaeton. Une sélection, une énergie, une signature.</p>
+      <a id="contactLink" class="text-link" href="mailto:djdefkilla@gmail.com?subject=Contact%20DJ%20DEFKILLA">CONTACTER LE DJ ↗</a>
     </section>
   </main>
 
@@ -103,7 +103,7 @@
       <p class="eyebrow">NOW PLAYING</p>
       <h2 id="playerTitle">DJ DEFKILLA MIX</h2>
       <div id="playerFrame" class="player-frame"></div>
-      <p class="small-note">La lecture est fournie par Mixcloud et nécessite une connexion Internet.</p>
+      <p class="small-note" data-i18n="playerNote">La lecture est fournie par Mixcloud et nécessite une connexion Internet.</p>
     </div>
   </div>
 
