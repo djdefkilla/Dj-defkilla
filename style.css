@@ -199,41 +199,56 @@ footer{background:linear-gradient(90deg,#10271c,#111114,#2a0d11)}
 @media(max-width:520px){.mp3-now-playing{grid-template-columns:minmax(0,1fr) 38px;gap:8px}.mp3-progress{grid-column:1 / 2}.mp3-time{grid-column:2;grid-row:2}}
 
 
-/* V14 FINAL — graffiti redesign with Christmas accents; V13 layout/features preserved */
-:root{--red:#ff1830;--red2:#a90019;--ink:#080809;--panel:#111114;--paper:#f4f0ed;--gold:#e8c66f}
-html,body{background:#080809!important;color:#f5f2ef}
-body{background:radial-gradient(ellipse at 50% 8%,#39090f 0,transparent 38%),repeating-linear-gradient(135deg,#ffffff06 0 1px,transparent 1px 7px),#080809!important}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.24;background:linear-gradient(90deg,transparent 49%,#ffffff0b 50%,transparent 51%),linear-gradient(#ffffff08 1px,transparent 1px);background-size:100% 84px,100% 84px}
-.topbar{background:#080809ef!important;border-bottom:2px solid var(--red)!important;box-shadow:0 5px 24px #ff102733}
-.brand-mark{background:linear-gradient(145deg,#ff263b,#65000c)!important;border:2px solid #fff!important;box-shadow:0 0 15px #ff1d38!important;transform:rotate(-5deg)}
-.brand b,.hero h1 span,.about h2 span,.mp3-section h2 span{color:var(--red)!important;text-shadow:2px 2px #fff,4px 4px #65000c}
-.language-select,.install-btn{border:1px solid var(--red)!important;background:#111!important;color:#fff!important}
-.sound-dock{background:linear-gradient(110deg,#09090a,#251014 65%,#080809)!important;border:1px solid #ff253b!important;border-left:5px solid var(--red)!important;box-shadow:0 0 22px #f00a}
-.sound-toggle,.primary-btn,.mp3-card-play,.mp3-control{background:linear-gradient(135deg,#ff3347,#a90018)!important;border:1px solid #ff8a94!important;box-shadow:0 0 14px #ff1c35a8!important}
-.hero{border:1px solid #ff263b!important;box-shadow:0 0 25px #f001,inset 0 0 60px #000!important}
-.hero h1,.section-heading h2,.about h2,.official-library-note h2{font-family:Impact,'Arial Black',sans-serif!important;text-transform:uppercase;letter-spacing:.02em;text-shadow:2px 2px #ff1935,4px 4px #000}
-.eyebrow{color:#ff5363!important;text-shadow:0 0 7px #ff1b34}
-.hero-copy,.hint,.about p,.official-library-note p{color:#d0c8c8!important}
-.hero-tag,.holiday-sticker{border:1px solid var(--red)!important;box-shadow:0 0 12px #ff1237!important}
-.genres{background:#0d0d0f!important;border-top:1px solid #8f1422!important;border-bottom:1px solid #8f1422!important}
-.genres span{color:#fff!important;text-shadow:0 0 5px #ff263b}
-.live-photo-feature{border:1px solid #a51525!important;background:linear-gradient(135deg,#111,#26070b)!important;box-shadow:0 0 18px #f001}
-.section,.official-library-note,.about{background:linear-gradient(145deg,#121214ed,#09090af2)!important;border:1px solid #4a171d!important;border-top:2px solid #e51b32!important;box-shadow:0 12px 28px #0009}
-.section-heading h2{color:#fff!important}
-.filter{background:#151518!important;border:1px solid #5c2730!important;color:#eee!important}
-.filter.active{background:#e51c32!important;border-color:#ff8792!important;box-shadow:0 0 10px #ff1b35!important}
-.mix-card,.mp3-card{background:linear-gradient(145deg,#1b1b1e,#09090b)!important;border:1px solid #6e1c29!important;box-shadow:4px 4px 0 #5b0b18,0 8px 20px #0009!important}
-.mix-art,.mp3-art{background:radial-gradient(circle at 50% 45%,#68101d,#09090b 72%)!important;border:1px solid #ff3147!important;box-shadow:0 0 12px #ff102c!important}
-.mix-card h3,.mp3-card-info h3{color:#fff!important}
-.official-library-note{background:linear-gradient(120deg,#171719,#27080d)!important}
-.about{background:linear-gradient(125deg,#07130c,#171719 55%,#310910)!important}
-footer{border-top:1px solid #a51a2a!important;color:#aaa!important}
-.mp3-now-playing{background:linear-gradient(100deg,#12090b,#211014)!important;border:1px solid #f52b43!important;box-shadow:0 -5px 24px #000,0 0 14px #ff183355!important}
-input[type=range]{accent-color:#ff243b!important}
-.holiday-lights{filter:drop-shadow(0 0 5px #ff233a)}
-.snowfall{opacity:.8}
-.hero-garland{filter:drop-shadow(0 0 5px #ff263b)}
-.holiday-sticker{color:#f6d98d!important;background:#16090b!important}
-.welcome-flyer{position:fixed;inset:0;z-index:2147483647;background:#050505;overflow:hidden}
-.welcome-flyer-hitarea{position:absolute;inset:0;display:block;width:100%;height:100%;padding:0;margin:0;border:0;background:#050505;cursor:pointer}
-.welcome-flyer-hitarea img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+/* V14 — faithfully apply the approved graffiti + Christmas concept to the existing V13 layout */
+:root{--bg:#070709;--panel:#111114;--red:#f21d32;--white:#f8f5f3;--muted:#b6afb0;--gold:#e8c66d}
+body{background:#070709!important;color:var(--white)!important}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 50% 0%,#40101766,transparent 45%),repeating-linear-gradient(135deg,#fff05 0 1px,transparent 1px 8px)}
+.topbar{height:76px;background:#080809f2!important;border-bottom:2px solid #67131d!important;box-shadow:0 4px 24px #000a;z-index:20}
+.brand{font-family:'Barlow Condensed',Impact,sans-serif;font-size:20px;font-weight:900;letter-spacing:2px}
+.brand-mark{width:48px;height:48px;background:linear-gradient(145deg,#ff3043,#a00016)!important;border:2px solid #fff;box-shadow:4px 4px 0 #55000b,0 0 18px #f21d3288;transform:rotate(-7deg);font-style:italic}
+.brand b{color:#ff263d!important;text-shadow:2px 2px #52000a}
+.language-select{background:#101014!important;color:#fff!important;border:1px solid #8a303a!important;border-radius:5px;padding:9px 12px}
+.install-btn{background:#e91d32!important;border:1px solid #ff7784!important;box-shadow:0 0 12px #f21d3266}
+.sound-dock{position:relative;background:linear-gradient(110deg,#09090b 0%,#210b10 52%,#071b12 100%)!important;border-top:1px solid #8c1d2a!important;border-bottom:1px solid #8c1d2a!important;padding:20px clamp(18px,4vw,48px)!important;display:grid;grid-template-columns:1fr auto;gap:12px 20px;align-items:center}
+.sound-kicker{color:#e7c978!important;letter-spacing:2.2px!important}
+.sound-copy strong{font-family:'Barlow Condensed',Impact,sans-serif;font-size:22px;letter-spacing:1px}
+.sound-toggle{background:linear-gradient(135deg,#ff3347,#c9001b)!important;border:1px solid #ff8792!important;border-radius:8px!important;min-height:54px;padding:0 24px!important;font-size:15px!important;font-weight:900;box-shadow:0 0 18px #f21d3266}
+.sound-volume{grid-column:1/-1;color:#e7c978!important;font-weight:900}
+.sound-volume input{accent-color:#f21d32!important}
+.hero{min-height:690px!important;padding:90px clamp(22px,7vw,100px) 70px!important;background:#080809!important;isolation:isolate}
+.hero-photo{width:100%!important;inset:0!important;background-position:center 30%!important;background-size:cover!important;opacity:.9!important;mask-image:linear-gradient(180deg,#000 0%,#000 65%,transparent 100%)!important;-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 65%,transparent 100%)!important}
+.hero:after{background:linear-gradient(180deg,#05050722 0%,#05050722 38%,#050507e8 85%,#070709 100%)!important}
+.hero-copy-block{max-width:700px!important;margin-top:250px!important}
+.hero h1{font-family:'Barlow Condensed',Impact,sans-serif!important;font-size:clamp(64px,12vw,126px)!important;line-height:.82!important;letter-spacing:-2px!important;text-shadow:4px 4px 0 #69000b,8px 8px 0 #000!important}
+.hero h1 span{color:#ff243b!important;-webkit-text-stroke:1px #ff7b86;text-shadow:3px 3px 0 #68000b,7px 7px 0 #000!important}
+.hero-copy{font-size:clamp(14px,2vw,20px)!important;color:#e1d9d8!important;max-width:650px!important}
+.hero .eyebrow{color:#f1d68c!important;font-size:12px!important;letter-spacing:4px!important}
+.hero-tag{top:14%!important;right:7%!important;color:#ff3449!important;font-family:Impact,sans-serif!important;font-size:32px!important;transform:rotate(-8deg)!important;text-shadow:3px 3px #000!important}
+.holiday-sticker{top:35%!important;right:5%!important;background:#075332!important;border:5px solid #e3c46c!important;color:white!important;border-radius:50%!important;width:112px;height:112px;display:grid;place-content:center;text-align:center;box-shadow:0 0 0 7px #063b29,0 0 20px #ff1c32!important;transform:rotate(9deg)!important}
+.primary-btn{background:linear-gradient(110deg,#f32137 0 75%,#075c3c 75%)!important;border:2px solid #ff8992!important;box-shadow:0 0 18px #f21d3266!important;border-radius:0!important;padding:19px 22px!important;font-size:15px!important}
+.holiday-note{background:#080809!important;border-top:1px solid #6b1c26!important;border-bottom:1px solid #6b1c26!important;color:#e8cc83!important;text-align:center;padding:16px!important;letter-spacing:2px}
+.genres{background:#111114!important;border-top:1px solid #7d202c!important;border-bottom:1px solid #7d202c!important;color:#f5eeee!important}
+.live-photo-feature{position:relative!important;min-height:320px!important;background:#09090b!important;border:2px solid #781c29!important;overflow:hidden!important}
+.live-photo-image{filter:contrast(1.12)!important}
+.live-photo-copy h2{font-family:Impact,sans-serif!important;text-shadow:3px 3px #780b17!important}
+.section,.official-library-note,.about{background:linear-gradient(145deg,#111114,#080809)!important;border-top:2px solid #c51d31!important;border-left:1px solid #4d1b22!important;border-right:1px solid #4d1b22!important;box-shadow:0 12px 30px #000b!important}
+.section{padding-top:55px!important;padding-bottom:55px!important}
+.section-heading h2,.about h2{font-family:Impact,'Barlow Condensed',sans-serif!important;text-transform:uppercase!important;font-size:clamp(40px,7vw,58px)!important;text-shadow:3px 3px #760b17!important}
+.eyebrow{color:#e9ca7c!important;letter-spacing:3px!important}
+.live-dot{color:#e9ca7c!important}
+.filter{border:1px solid #61303a!important;background:#111114!important;color:#eee!important;border-radius:3px!important}
+.filter.active,.filter:hover{background:#ed1d34!important;border-color:#ff8390!important;box-shadow:0 0 12px #f21d3266!important}
+.mix-card{background:#0d0d10!important;border:2px solid #a71b2c!important;box-shadow:0 0 0 3px #21070b,0 0 20px #f21d3233!important;border-radius:12px!important}
+.mix-art{background:linear-gradient(135deg,#080809,#340911)!important;border:1px solid #ff4356!important;border-radius:7px!important}
+.play-btn{background:#ed1d34!important;border-radius:5px!important}
+.mp3-card{background:#0d0d10!important;border:2px solid #a71b2c!important;border-radius:12px!important;box-shadow:0 0 16px #f21d3233!important}
+.mp3-art{background:linear-gradient(135deg,#080809,#340911)!important;border:1px solid #ff4356!important}
+.mp3-now-playing{background:linear-gradient(100deg,#10080a,#201014)!important;border:1px solid #e9273d!important}
+.official-library-note{background:linear-gradient(135deg,#0c0c0e,#25080d)!important}
+.about{background:linear-gradient(110deg,#071a11,#121214 55%,#2a080e)!important}
+footer{border-top:1px solid #6c1c27!important;background:#080809!important}
+.holiday-lights{filter:drop-shadow(0 0 7px #ff2538)}
+.snowfall{pointer-events:none}
+.welcome-flyer{position:fixed;inset:0;z-index:2147483647;background:#050505}
+@media(max-width:700px){.hero{min-height:650px!important;padding-top:70px!important}.hero-copy-block{margin-top:265px!important}.hero-tag{top:8%!important}.holiday-sticker{top:38%!important;right:4%!important;width:90px;height:90px}.sound-dock{grid-template-columns:1fr auto}.sound-toggle{padding:0 15px!important}.mix-grid{grid-template-columns:1fr 1fr!important}}
+@media(max-width:430px){.hero{min-height:620px!important}.hero-copy-block{margin-top:245px!important}.mix-grid{grid-template-columns:1fr!important}}

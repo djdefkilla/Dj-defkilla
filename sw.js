@@ -1,5 +1,5 @@
-const CACHE = "dj-defkilla-graffiti-noel-v14-final";
-const ASSETS = ["./", "./index.html", "./welcome-graffiti-noel-v14.jpg", "./style.css", "./app.js", "./manifest.webmanifest", "./icon.svg", "./icon-192.png", "./icon-512.png", "./apple-touch-icon.png", "./dj-defkilla-live-bw.png", "./dj-defkilla-winter-live.png", "./dj-defkilla-jingle-bells-scratch.mp3"];
+const CACHE = "dj-defkilla-v14-graffiti-xmas-final";
+const ASSETS = ["./", "./index.html", "./welcome-graffiti-noel-v14.jpg", "./style.css", "./app.js", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./apple-touch-icon.png", "./dj-defkilla-live-bw.png", "./dj-defkilla-winter-live.png", "./dj-defkilla-jingle-bells-scratch.mp3"];
 self.addEventListener("install", event => event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS))));
 self.addEventListener("activate", event => event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k))))));
 self.addEventListener("fetch", event => {
