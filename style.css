@@ -448,3 +448,123 @@ footer{background:#08080a!important;border-top:1px solid #7e1727!important}
  .hero-photo{background-position:center 22%!important}
  .hero h1{font-size:clamp(56px,14.5vw,84px)!important}
 }
+
+
+/* V16 — app home rebuilt to match the RIGHT-HAND DJ DEFKILLA concept */
+body{background:#050507!important}
+.topbar{
+ height:78px!important;position:relative!important;top:auto!important;
+ padding:0 20px!important;background:linear-gradient(90deg,#08080a,#1a080d,#08080a)!important;
+ border-bottom:2px solid #e51c35!important;box-shadow:0 5px 20px #e51c3540!important
+}
+.brand{font-family:Impact,"Arial Black",sans-serif!important;font-size:19px!important;letter-spacing:1.5px!important}
+.brand-mark{width:48px!important;height:48px!important;font-size:25px!important}
+.hero{
+ min-height:470px!important;height:min(72vh,650px)!important;padding:0 20px 34px!important;
+ align-items:flex-end!important;display:flex!important;overflow:hidden!important;
+ background:
+  repeating-linear-gradient(0deg,transparent 0 45px,#ffffff08 46px 48px),
+  linear-gradient(180deg,#09090b,#21090f 65%,#08080a)!important;
+ border:0!important;border-bottom:3px solid #b90e27!important
+}
+.hero-photo{
+ inset:0!important;width:100%!important;height:100%!important;
+ background-image:url("dj-defkilla-winter-live.png")!important;
+ background-size:cover!important;background-position:center 25%!important;opacity:.96!important;
+ -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 62%,transparent 100%)!important;
+ mask-image:linear-gradient(180deg,#000 0%,#000 62%,transparent 100%)!important
+}
+.hero:after{
+ background:linear-gradient(0deg,#050507 0%,rgba(5,5,7,.68) 24%,rgba(5,5,7,.06) 76%,rgba(5,5,7,.2) 100%)!important;
+}
+.hero:before{content:""!important}
+.hero-copy-block{z-index:4!important;max-width:760px!important}
+.hero .eyebrow{font-size:12px!important;letter-spacing:4px!important}
+.hero h1{font-size:clamp(58px,11vw,112px)!important;line-height:.82!important;margin:8px 0 12px!important}
+.hero h1 span{display:block!important}
+.hero-copy{font-size:clamp(14px,2vw,18px)!important;max-width:620px!important;margin:12px 0 16px!important}
+.hero .primary-btn{max-width:300px!important;min-height:50px!important;padding:12px 18px!important;font-size:16px!important}
+.hero-tag{top:8%!important;right:5%!important;font-size:clamp(20px,4vw,34px)!important}
+.holiday-sticker{top:29%!important;right:5%!important;width:82px!important;height:82px!important}
+.sound-dock{
+ position:relative!important;top:auto!important;display:grid!important;
+ grid-template-columns:62px minmax(0,1fr) auto!important;grid-template-rows:auto auto!important;
+ gap:7px 12px!important;margin:14px 14px 18px!important;padding:13px!important;
+ border:2px solid #f21d35!important;border-radius:18px!important;
+ background:linear-gradient(110deg,#09090b,#1c080d 65%,#09090b)!important;
+ box-shadow:0 0 0 3px #320b12,0 0 20px #f21d3560!important
+}
+.sound-dock:before{
+ content:"DF";grid-column:1;grid-row:1/3;width:56px;height:56px;
+ display:grid;place-items:center;background:#08080a url("dj-defkilla-hiphop-logo.png") center/cover no-repeat;
+ border:2px solid #ff263f;border-radius:9px;color:transparent;box-shadow:0 0 12px #f21d35
+}
+.sound-copy{grid-column:2!important;grid-row:1!important}
+.sound-kicker{font-size:8px!important;letter-spacing:1px!important}
+.sound-copy strong{font-family:Impact,"Arial Black",sans-serif!important;font-size:clamp(14px,2.8vw,20px)!important;letter-spacing:.5px!important}
+.sound-copy small{font-size:10px!important}
+.sound-toggle{grid-column:3!important;grid-row:1/3!important;min-width:105px!important;min-height:46px!important;padding:0 10px!important;border-radius:7px!important;background:linear-gradient(135deg,#ff3048,#ad001d)!important;border:1px solid #ff9aa5!important;font-size:12px!important}
+.sound-volume{grid-column:2!important;grid-row:2!important;display:flex!important;max-width:100%!important}
+.sound-volume input{flex:1!important;width:auto!important;max-width:100%!important}
+.home-shortcuts{
+ display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ gap:14px!important;padding:0 14px!important;margin:18px auto 20px!important;max-width:900px!important
+}
+.shortcut-card{
+ min-height:175px!important;position:relative!important;overflow:hidden!important;
+ display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;
+ gap:5px!important;padding:16px 10px!important;text-align:center!important;
+ border:2px solid #f21d35!important;border-radius:18px!important;
+ background:radial-gradient(circle at 50% 35%,#46121b,#111114 72%)!important;
+ box-shadow:0 0 0 3px #310b11,0 0 20px #f21d3544!important;
+}
+.shortcut-card:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 16px,#ffffff08 17px 18px);pointer-events:none}
+.shortcut-icon{font-size:45px!important;line-height:1!important;color:#fff!important;text-shadow:0 0 15px #f21d35!important}
+.shortcut-card strong{font-family:Impact,"Arial Black",sans-serif!important;font-size:27px!important;line-height:.9!important;color:#fff!important;text-shadow:2px 2px 0 #111!important}
+.shortcut-card strong b{color:#ff263f!important;font-size:1.2em!important}
+.shortcut-card small{font-size:8px!important;font-weight:900!important;letter-spacing:1px!important;color:#e8c978!important}
+.official-strip{
+ display:flex!important;align-items:center!important;justify-content:center!important;gap:16px!important;
+ margin:18px 14px 28px!important;padding:15px 12px!important;min-height:96px!important;
+ border:2px solid #ed203b!important;border-radius:16px!important;
+ background:linear-gradient(100deg,#0b0b0d,#300b13 50%,#09090b)!important;
+ box-shadow:0 0 0 3px #2a080e,0 0 18px #f21d3555!important;text-align:center!important
+}
+.official-strip span:nth-child(2){display:flex!important;flex-direction:column!important;gap:2px!important}
+.official-crown{font-size:46px!important;color:#f21d35!important;text-shadow:0 0 12px #f21d35!important}
+.official-strip small{font-size:10px!important;font-weight:900!important;letter-spacing:2px!important;color:#fff!important}
+.official-strip strong{font-family:Impact,"Arial Black",sans-serif!important;font-size:clamp(27px,6vw,43px)!important;font-style:italic!important;color:#ff263f!important;text-shadow:3px 3px 0 #65000d!important}
+.official-star{font-size:32px!important;color:#f3d17c!important}
+.holiday-note,.genres,.live-photo-feature{display:none!important}
+.section{margin:0!important;padding:38px 16px!important;border-left:0!important;border-right:0!important}
+.section-heading{align-items:center!important}
+.section-heading h2{font-size:clamp(36px,8vw,54px)!important}
+.mix-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))!important}
+.mp3-section{margin-top:10px!important}
+.official-library-note{margin-top:18px!important}
+@media(max-width:520px){
+ .topbar{height:68px!important;padding:0 13px!important}
+ .brand{font-size:16px!important;gap:8px!important}
+ .brand-mark{width:42px!important;height:42px!important}
+ .hero{height:470px!important;min-height:470px!important;padding:0 16px 26px!important}
+ .hero-photo{background-position:center 23%!important}
+ .hero-tag{top:8%!important;right:4%!important;font-size:21px!important}
+ .holiday-sticker{top:29%!important;right:4%!important;width:72px!important;height:72px!important;font-size:10px!important}
+ .hero h1{font-size:clamp(54px,14vw,72px)!important}
+ .sound-dock{grid-template-columns:44px minmax(0,1fr) auto!important;gap:6px 8px!important;margin:12px 10px 16px!important;padding:10px!important}
+ .sound-dock:before{width:40px;height:40px;border-radius:7px}
+ .sound-kicker{font-size:7px!important;letter-spacing:.7px!important}
+ .sound-copy strong{font-size:13px!important;line-height:1.05!important}
+ .sound-copy small{font-size:9px!important}
+ .sound-toggle{min-width:83px!important;min-height:42px!important;font-size:10px!important;padding:0 7px!important}
+ .sound-volume{font-size:8px!important;gap:5px!important}
+ .home-shortcuts{gap:10px!important;padding:0 11px!important;margin:14px auto 17px!important}
+ .shortcut-card{min-height:160px!important;border-radius:15px!important}
+ .shortcut-icon{font-size:39px!important}
+ .shortcut-card strong{font-size:24px!important}
+ .official-strip{margin:15px 11px 24px!important;min-height:84px!important;gap:10px!important;padding:12px 8px!important}
+ .official-crown{font-size:36px!important}
+ .official-strip small{font-size:8px!important;letter-spacing:1.3px!important}
+ .official-strip strong{font-size:29px!important}
+ .official-star{font-size:25px!important}
+}
