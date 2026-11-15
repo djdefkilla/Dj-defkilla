@@ -257,17 +257,3 @@ const officialMp3Tracks = [
     if (audio.duration) audio.currentTime = Number(progress.value) / 100 * audio.duration;
   });
 })();
-
-
-// V14 — dismiss the opening flyer and reveal the app.
-document.addEventListener("DOMContentLoaded", () => {
-  const flyer = document.getElementById("launchFlyer");
-  const enter = document.getElementById("enterAppButton");
-  if (!flyer || !enter) return;
-  document.body.classList.add("flyer-open");
-  enter.addEventListener("click", () => {
-    flyer.classList.add("is-hidden");
-    document.body.classList.remove("flyer-open");
-    window.setTimeout(() => flyer.remove(), 320);
-  }, { once: true });
-});

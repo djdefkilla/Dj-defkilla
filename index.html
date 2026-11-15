@@ -10,20 +10,14 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="style.css">
   <title>DJ DEFKILLA — Official Mixes</title>
-
-  <style>
-    html,body{margin:0!important;width:100%;min-height:100%;background:#050506!important;overflow-x:hidden}
-    body.flyer-open{overflow:hidden!important}
-    .launch-flyer{position:fixed!important;inset:0!important;z-index:2147483000!important;display:flex!important;align-items:center!important;justify-content:center!important;width:100vw!important;height:100dvh!important;height:100vh!important;margin:0!important;padding:0!important;background:#050506!important;overflow:hidden!important;opacity:1!important;visibility:visible!important}
-    .launch-flyer.is-hidden{opacity:0!important;visibility:hidden!important;pointer-events:none!important}
-    .launch-flyer-hitarea{display:block!important;position:relative!important;width:100%!important;height:100%!important;margin:0!important;padding:0!important;border:0!important;background:#050506!important;cursor:pointer!important}
-    .launch-flyer-image{display:block!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important}
-    @supports(height:100dvh){.launch-flyer{height:100dvh!important}}
-  </style>
-
 </head>
-<body class="flyer-open">
-  <section id="launchFlyer" class="launch-flyer" aria-label="Flyer de lancement DJ DEFKILLA"><button id="enterAppButton" class="launch-flyer-hitarea" type="button" aria-label="Entrer dans l’application" onclick="document.getElementById(\'launchFlyer\').remove();document.body.classList.remove(\'flyer-open\');"><img class="launch-flyer-image" src="./flyer-ouverture-v14.png" alt="DJ DEFKILLA — lancement officiel. Appuyez pour entrer dans l’application"></button></section>
+<body class="welcome-open">\n
+  <section id="welcomeFlyer" class="welcome-flyer" aria-label="Bienvenue sur DJ DEFKILLA">
+    <button class="welcome-flyer-hitarea" type="button" aria-label="Entrer dans l'application"
+      onclick="document.getElementById('welcomeFlyer').remove();document.body.classList.remove('welcome-open');">
+      <img src="./welcome-graffiti-noel-v14.jpg" alt="Bienvenue sur l'application DJ DEFKILLA. Appuyez pour entrer.">
+    </button>
+  </section>
 
   <div class="snowfall" aria-hidden="true"></div>
   <div id="splash" class="splash" aria-label="DJ DEFKILLA">
@@ -57,7 +51,7 @@
     <label class="sound-volume" for="soundVolume">VOL
       <input id="soundVolume" type="range" min="0" max="1" step="0.05" value="0.22" aria-label="Volume de la musique de fond">
     </label>
-    <audio id="backgroundAudio" src="./dj-defkilla-oldschool-loop.wav" loop preload="auto" playsinline></audio>
+    <audio id="backgroundAudio" src="./dj-defkilla-jingle-bells-scratch.mp3" loop preload="auto" playsinline></audio>
   </aside>
 
   <main>
