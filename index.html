@@ -34,6 +34,18 @@
     </a>
     <div class="header-actions"><select id="languageSelect" class="language-select" aria-label="Language"><option value="fr">FR</option><option value="en">EN</option><option value="es">ES</option></select><button id="installBtn" class="install-btn" hidden>Installer l'app</button></div>
   </header>
+  <aside class="sound-dock" aria-label="Ambiance musicale DJ DEFKILLA">
+    <div class="sound-copy">
+      <span class="sound-kicker">DJ DEFKILLA • OLD SCHOOL VIBE</span>
+      <strong>BACKGROUND MIX</strong>
+      <small id="soundStatus">Musique désactivée</small>
+    </div>
+    <button id="soundToggle" class="sound-toggle" type="button" aria-pressed="false">▶ ÉCOUTER</button>
+    <label class="sound-volume" for="soundVolume">VOL
+      <input id="soundVolume" type="range" min="0" max="1" step="0.05" value="0.22" aria-label="Volume de la musique de fond">
+    </label>
+    <audio id="backgroundAudio" src="./dj-defkilla-oldschool-loop.wav" loop preload="none"></audio>
+  </aside>
 
   <main>
     <section class="hero">

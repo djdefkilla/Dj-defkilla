@@ -145,3 +145,16 @@ footer{background:linear-gradient(90deg,#10271c,#111114,#2a0d11)}
  .live-photo-image{width:100%;height:100%;background-position:center 30%;mask-image:linear-gradient(180deg,#000 0%,#000 58%,transparent 100%);-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 58%,transparent 100%)}
  .live-photo-feature:after{background:linear-gradient(0deg,#09090b 0%,rgba(9,9,11,.72) 30%,transparent 100%)}
 }
+
+
+/* V7 — optional old-school background music player */
+.sound-dock{position:sticky;top:72px;z-index:6;display:flex;align-items:center;gap:13px;padding:10px clamp(14px,4vw,50px);background:linear-gradient(100deg,#111114,#251014 55%,#10251b);border-bottom:1px solid #704b35;box-shadow:0 5px 18px #0007}
+.sound-copy{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1}
+.sound-kicker{font-size:8px;letter-spacing:1.5px;color:#d7b66a;font-weight:800}
+.sound-copy strong{font-size:11px;letter-spacing:1px;color:#fff}
+.sound-copy small{font-size:9px;color:#b9b9bd}
+.sound-toggle{background:#f12b35;border:0;color:white;padding:10px 12px;font-size:9px;font-weight:900;letter-spacing:.8px;white-space:nowrap;cursor:pointer;min-width:94px}
+.sound-toggle.is-playing{background:#17633f}
+.sound-volume{display:flex;align-items:center;gap:6px;color:#d9c58e;font-size:8px;font-weight:900}
+.sound-volume input{width:70px;accent-color:#f12b35}
+@media(max-width:430px){.sound-dock{gap:8px;padding:9px 10px}.sound-kicker{font-size:7px}.sound-copy strong{font-size:10px}.sound-toggle{padding:9px 8px;min-width:82px;font-size:8px}.sound-volume input{width:48px}}

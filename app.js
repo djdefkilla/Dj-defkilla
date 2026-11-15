@@ -161,3 +161,31 @@ const savedLanguage = localStorage.getItem("dj-defkilla-language");
 const browserLanguage = (navigator.language || "fr").slice(0,2).toLowerCase();
 applyLanguage(savedLanguage || (translations[browserLanguage] ? browserLanguage : "fr"));
 languageSelect?.addEventListener("change", () => applyLanguage(languageSelect.value));
+
+
+// Optional background instrumental: playback starts only after the visitor taps.
+(() => {
+  const audio = document.getElementById("backgroundAudio");
+  const toggle = document.getElementById("soundToggle");
+  const volume = document.getElementById("soundVolume");
+  const status = document.getElementById("soundStatus");
+  if (!audio || !toggle || !volume || !status) return;
+  audio.volume = Number(volume.value);
+  const sync = (playing) => {
+    toggle.textContent = playing ? "Ⅱ PAUSE" : "▶ ÉCOUTER";
+    toggle.classList.toggle("is-playing", playing);
+    toggle.setAttribute("aria-pressed", String(playing));
+    status.textContent = playing ? "Ambiance activée" : "Musique désactivée";
+  };
+  toggle.addEventListener("click", async () => {
+    if (audio.paused) {
+      try { await audio.play(); sync(true); }
+      catch { status.textContent = "Lecture indisponible — réessaie"; }
+    } else {
+      audio.pause(); sync(false);
+    }
+  });
+  volume.addEventListener("input", () => { audio.volume = Number(volume.value); });
+  audio.addEventListener("pause", () => sync(false));
+  audio.addEventListener("play", () => sync(true));
+})();
