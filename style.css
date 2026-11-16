@@ -568,3 +568,60 @@ body{background:#050507!important}
  .official-strip strong{font-size:29px!important}
  .official-star{font-size:25px!important}
 }
+
+
+/* V17 — replace the mountain look with a red-lit graffiti DJ club */
+.hero{
+ background-color:#08080a!important;
+ background-image:
+  radial-gradient(ellipse at 12% 22%,rgba(240,20,48,.36),transparent 35%),
+  radial-gradient(ellipse at 88% 38%,rgba(240,20,48,.24),transparent 32%),
+  linear-gradient(180deg,#08080a,#17070c 70%,#050507)!important;
+}
+.hero-photo{
+ background-image:
+  linear-gradient(180deg,rgba(4,4,6,.08),rgba(4,4,6,.18) 54%,rgba(4,4,6,.72)),
+  url("dj-defkilla-live-bw.png")!important;
+ background-size:cover!important;
+ background-position:center 22%!important;
+ background-repeat:no-repeat!important;
+ opacity:.96!important;
+ filter:contrast(1.12) brightness(.82) saturate(.78)!important;
+ -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 72%,transparent 100%)!important;
+ mask-image:linear-gradient(180deg,#000 0%,#000 72%,transparent 100%)!important;
+}
+/* Graffiti brickwork texture layered over the live DJ photo */
+.hero:before{
+ content:""!important;position:absolute!important;inset:0!important;z-index:2!important;
+ pointer-events:none!important;opacity:.34!important;mix-blend-mode:screen!important;
+ background-image:
+  linear-gradient(0deg,transparent 0 38px,rgba(255,255,255,.20) 39px 41px,transparent 42px 80px),
+  linear-gradient(90deg,transparent 0 78px,rgba(255,255,255,.13) 79px 81px,transparent 82px 160px),
+  linear-gradient(90deg,transparent 0 38px,rgba(255,255,255,.11) 39px 41px,transparent 42px 80px),
+  radial-gradient(ellipse at 8% 30%,rgba(255,0,45,.48),transparent 32%),
+  radial-gradient(ellipse at 94% 48%,rgba(255,0,45,.38),transparent 28%)!important;
+ background-size:160px 80px,160px 80px,160px 80px,100% 100%,100% 100%!important;
+ background-position:0 0,0 0,80px 40px,center,center!important;
+}
+.hero:after{
+ z-index:3!important;pointer-events:none!important;
+ background:
+  linear-gradient(180deg,rgba(4,4,6,.22) 0%,rgba(4,4,6,.02) 28%,rgba(4,4,6,.28) 56%,#050507 100%),
+  linear-gradient(90deg,rgba(5,5,7,.35),transparent 48%,rgba(5,5,7,.28))!important;
+}
+.hero-copy-block{z-index:5!important}
+.hero-tag,.holiday-sticker{z-index:5!important}
+.hero-garland{z-index:5!important}
+.hero .eyebrow{text-shadow:0 0 12px #ff173b,0 0 25px #ff173b!important}
+.hero h1 span{
+ color:#ff173b!important;
+ text-shadow:3px 3px 0 #71000e,7px 7px 0 #050505,0 0 24px #ff173b99!important;
+}
+.hero .primary-btn{
+ box-shadow:0 0 0 3px #380710,0 0 22px #f21d3577!important;
+}
+@media(max-width:520px){
+ .hero{height:470px!important;min-height:470px!important}
+ .hero-photo{background-position:center 19%!important}
+ .hero:before{opacity:.28!important;background-size:130px 68px,130px 68px,130px 68px,100% 100%,100% 100%!important;background-position:0 0,0 0,65px 34px,center,center!important}
+}
