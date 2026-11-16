@@ -236,6 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Official DJ DEFKILLA MP3 library. New tracks are added by the DJ, not by visitors.
 const officialMp3Tracks = [
+  { id: "mix-1", title: "MIX 1", genre: "DJ DEFKILLA", file: "./VA%20-%20Short%20Cutz%20Megamixes%2004%20(100).mp3" },
   // Future entry example:
   // { id: "mp3-001", title: "Mini Mix 01", genre: "Hip-hop", duration: "03:25", file: "mp3/mini-mix-01.mp3" }
 ];
