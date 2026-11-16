@@ -1,4 +1,4 @@
-const CACHE = "dj-defkilla-v16-home-design";
+const CACHE = "dj-defkilla-v17-graffiti-club";
 const ASSETS = ["./", "./index.html", "./style.css", "./app.js", "./manifest.webmanifest", "./icon.svg", "./icon-192.png", "./icon-512.png", "./apple-touch-icon.png", "./dj-defkilla-live-bw.png", "./dj-defkilla-winter-live.png", "./welcome-graffiti-noel-v14.jpg", "./dj-defkilla-jingle-bells-scratch.mp3", "./dj-defkilla-hiphop-logo.png"];
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
