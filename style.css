@@ -625,3 +625,59 @@ body{background:#050507!important}
  .hero-photo{background-position:center 19%!important}
  .hero:before{opacity:.28!important;background-size:130px 68px,130px 68px,130px 68px,100% 100%,100% 100%!important;background-position:0 0,0 0,65px 34px,center,center!important}
 }
+
+
+/* V18 — stronger exposed brickwork + red graffiti paint splashes */
+.hero{
+ background-color:#080709!important;
+ background-image:
+  radial-gradient(ellipse at 5% 36%,rgba(255,0,40,.48),transparent 27%),
+  radial-gradient(ellipse at 98% 58%,rgba(255,0,35,.43),transparent 24%),
+  radial-gradient(ellipse at 18% 7%,rgba(160,0,25,.28),transparent 28%),
+  linear-gradient(180deg,#09080a 0%,#1b080e 68%,#050507 100%)!important;
+}
+.hero-photo{
+ background-image:
+  linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.05) 45%,rgba(0,0,0,.62)),
+  url("dj-defkilla-live-bw.png")!important;
+ background-size:cover!important;background-position:center 22%!important;
+ filter:contrast(1.18) brightness(.74) grayscale(.72)!important;
+ opacity:.98!important;
+}
+.hero:before{
+ content:""!important;position:absolute!important;inset:0!important;z-index:2!important;
+ pointer-events:none!important;opacity:.55!important;mix-blend-mode:screen!important;
+ background-image:
+  /* horizontal mortar lines */
+  linear-gradient(0deg,transparent 0 37px,rgba(210,190,190,.28) 38px 40px,transparent 41px 78px),
+  /* alternating vertical brick joints */
+  linear-gradient(90deg,transparent 0 76px,rgba(210,190,190,.23) 77px 79px,transparent 80px 156px),
+  linear-gradient(90deg,transparent 0 38px,rgba(210,190,190,.18) 39px 41px,transparent 42px 78px),
+  /* red paint sprays at both edges */
+  radial-gradient(ellipse at 0% 44%,rgba(255,0,38,.9) 0%,rgba(255,0,38,.35) 10%,transparent 25%),
+  radial-gradient(ellipse at 100% 54%,rgba(255,0,38,.82) 0%,rgba(255,0,38,.3) 12%,transparent 26%),
+  radial-gradient(circle at 8% 17%,#ff173b 0 2px,transparent 3px),
+  radial-gradient(circle at 16% 26%,#ff173b 0 3px,transparent 4px),
+  radial-gradient(circle at 91% 30%,#ff173b 0 2px,transparent 3px),
+  radial-gradient(circle at 84% 67%,#ff173b 0 3px,transparent 4px),
+  radial-gradient(circle at 5% 78%,#ff173b 0 2px,transparent 3px),
+  radial-gradient(circle at 95% 84%,#ff173b 0 2px,transparent 3px)!important;
+ background-size:156px 78px,156px 78px,156px 78px,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%!important;
+ background-position:0 0,0 0,78px 39px,center,center,center,center,center,center,center,center!important;
+}
+.hero:after{
+ z-index:3!important;
+ background:
+  radial-gradient(ellipse at 0% 52%,rgba(255,0,42,.20),transparent 36%),
+  radial-gradient(ellipse at 100% 56%,rgba(255,0,42,.18),transparent 34%),
+  linear-gradient(180deg,rgba(0,0,0,.08),transparent 28%,rgba(0,0,0,.22) 60%,#050507 100%)!important;
+}
+.hero h1 span{
+ text-shadow:3px 3px 0 #71000e,7px 7px 0 #050505,0 0 22px #ff173b!important;
+}
+.hero .primary-btn{
+ box-shadow:0 0 0 3px #360811,0 0 24px #ff173b88!important;
+}
+@media(max-width:520px){
+ .hero:before{opacity:.46!important;background-size:124px 66px,124px 66px,124px 66px,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%!important;background-position:0 0,0 0,62px 33px,center,center,center,center,center,center,center,center!important}
+}
