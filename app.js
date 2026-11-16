@@ -87,13 +87,13 @@ installBtn?.addEventListener("click", async () => {
     return;
   }
   const lang = document.documentElement.lang || "fr";
-  const help = {
-    fr: "Pour installer DJ DEFKILLA : ouvre le menu ⋮ de Chrome puis choisis Installer l'application ou Ajouter à l'écran d'accueil.",
-    en: "To install DJ DEFKILLA: open Chrome's ⋮ menu and choose Install app or Add to Home screen.",
-    es: "Para instalar DJ DEFKILLA: abre el menú ⋮ de Chrome y elige Instalar aplicación o Añadir a pantalla de inicio.",
-    it: "Per installare DJ DEFKILLA: apri il menu ⋮ di Chrome e scegli Installa app o Aggiungi alla schermata Home."
+  const messages = {
+    fr: "Le bouton d'installation est bien intégré à DJ DEFKILLA. La fenêtre d'installation officielle n'est pas disponible dans ce navigateur pour le moment. Réessaie depuis un navigateur compatible ou lorsque l'application sera proposée à l'installation.",
+    en: "The install button is built into DJ DEFKILLA. The official installation prompt is not available in this browser right now. Try again in a supported browser.",
+    es: "El botón de instalación está integrado en DJ DEFKILLA. La ventana oficial de instalación no está disponible en este navegador ahora mismo.",
+    it: "Il pulsante di installazione è integrato in DJ DEFKILLA. La finestra ufficiale di installazione non è disponibile in questo browser al momento."
   };
-  window.alert(help[lang] || help.fr);
+  window.alert(messages[lang] || messages.fr);
 });
 if ("serviceWorker" in navigator) window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(()=>{}));
 
