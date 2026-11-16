@@ -8,21 +8,28 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="style.css?v=22">
+  <link rel="stylesheet" href="style.css?v=23">
   <title>DJ DEFKILLA — Official Mixes</title>
-<style id="welcome-fullscreen-v14">
-html,body{margin:0!important;background:#070709!important}
+<style id="welcome-popup-v23">
 body.welcome-open{overflow:hidden!important}
-#welcomeFlyer{position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;height:100dvh!important;z-index:2147483647!important;display:block!important;overflow:hidden!important;background:#050505!important}
-#welcomeFlyer .welcome-flyer-hitarea{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;margin:0!important;padding:0!important;border:0!important;background:#050505!important;line-height:0!important}
-#welcomeFlyer img{position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;object-fit:contain!important;object-position:center!important}
+#welcomeFlyer{position:fixed;inset:0;z-index:2147483647;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.82);backdrop-filter:blur(5px)}
+#welcomeFlyer[hidden]{display:none!important}
+#welcomeFlyer .welcome-popup-panel{position:relative;width:min(92vw,520px);max-height:88dvh;display:flex;align-items:center;justify-content:center;padding:10px;background:#101014;border:1px solid #f12b35;box-shadow:0 0 35px rgba(241,43,53,.28),0 18px 60px #000; border-radius:5px}
+#welcomeFlyer img{display:block;width:100%;height:auto;max-height:calc(88dvh - 20px);object-fit:contain;border-radius:2px}
+#welcomeFlyer .welcome-popup-close{position:absolute;right:-11px;top:-13px;width:36px;height:36px;border:2px solid #fff;border-radius:50%;background:#f12b35;color:#fff;font:700 25px/1 Arial,sans-serif;cursor:pointer;box-shadow:0 3px 12px #000}
+@media(max-width:480px){#welcomeFlyer{padding:14px}#welcomeFlyer .welcome-popup-panel{width:min(94vw,520px);padding:7px}}
 </style>
 </head>
 <body class="welcome-open">
-<section id="welcomeFlyer" class="welcome-flyer" aria-label="Bienvenue sur DJ DEFKILLA">
-<button class="welcome-flyer-hitarea" type="button" aria-label="Entrer dans l'application" onclick="document.getElementById('welcomeFlyer').remove();document.body.classList.remove('welcome-open');">
-<img src="./welcome-graffiti-noel-v14.jpg" alt="Bienvenue sur DJ DEFKILLA, édition de Noël. Appuyez pour entrer.">
-</button></section>
+<section id="welcomeFlyer" class="welcome-flyer" role="dialog" aria-modal="true" aria-label="Bienvenue sur DJ DEFKILLA">
+<div class="welcome-popup-panel">
+<img src="./welcome-graffiti-noel-v14.jpg" alt="Bienvenue sur DJ DEFKILLA, édition de Noël.">
+<button class="welcome-popup-close" type="button" aria-label="Fermer la fenêtre" onclick="document.getElementById('welcomeFlyer').hidden=true;document.body.classList.remove('welcome-open');">×</button>
+</div>
+</section>
+<script>
+document.addEventListener("keydown",function(event){if(event.key==="Escape"){const popup=document.getElementById("welcomeFlyer");if(popup&&!popup.hidden){popup.hidden=true;document.body.classList.remove("welcome-open");}}});
+</script>
   <div class="snowfall" aria-hidden="true"></div>
 <div class="holiday-lights" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
   <header class="topbar">
@@ -142,6 +149,6 @@ body.welcome-open{overflow:hidden!important}
     </div>
   </div>
 
-  <script src="app.js?v=22"></script>
+  <script src="app.js?v=23"></script>
 </body>
 </html>
