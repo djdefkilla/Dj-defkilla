@@ -681,3 +681,29 @@ body{background:#050507!important}
 @media(max-width:520px){
  .hero:before{opacity:.46!important;background-size:124px 66px,124px 66px,124px 66px,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%!important;background-position:0 0,0 0,62px 33px,center,center,center,center,center,center,center,center!important}
 }
+
+
+/* V19 — replace the square grid with staggered, realistic brick courses */
+.hero:before{
+ content:""!important;position:absolute!important;inset:0!important;z-index:2!important;
+ pointer-events:none!important;opacity:.36!important;mix-blend-mode:screen!important;
+ background-image:
+  /* course 1: vertical mortar joints */
+  linear-gradient(90deg,transparent 0 98%,rgba(210,184,184,.32) 98.2% 100%),
+  /* course 2: staggered vertical mortar joints */
+  linear-gradient(90deg,transparent 0 98%,rgba(210,184,184,.28) 98.2% 100%),
+  /* horizontal mortar joints */
+  linear-gradient(0deg,transparent 0 95%,rgba(210,184,184,.30) 95.5% 100%),
+  /* red spray paint at edges, not a full grid */
+  radial-gradient(ellipse at 0% 42%,rgba(255,0,38,.78),transparent 26%),
+  radial-gradient(ellipse at 100% 56%,rgba(255,0,38,.70),transparent 25%),
+  radial-gradient(circle at 9% 22%,#ff173b 0 2px,transparent 3px),
+  radial-gradient(circle at 17% 35%,#ff173b 0 3px,transparent 4px),
+  radial-gradient(circle at 92% 28%,#ff173b 0 2px,transparent 3px),
+  radial-gradient(circle at 85% 68%,#ff173b 0 3px,transparent 4px)!important;
+ background-size:120px 60px,120px 60px,120px 30px,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%!important;
+ background-position:0 0,60px 30px,0 0,center,center,center,center,center,center!important;
+}
+@media(max-width:520px){
+ .hero:before{opacity:.31!important;background-size:104px 54px,104px 54px,104px 27px,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%!important;background-position:0 0,52px 27px,0 0,center,center,center,center,center,center!important}
+}
