@@ -123,6 +123,20 @@ const translations = {
     close:"Cerrar", play:"▶ ESCUCHAR", share:"Compartir ↗", invalid:"Introduce un enlace de Mixcloud (https://www.mixcloud.com/...).",
     added:"¡Sesión añadida a esta lista en este dispositivo!", copied:"¡Enlace copiado!"
   }
+  it: {
+    install:"Installa l'app", genresLine:"HIP-HOP. R&B. DANCEHALL. REGGAETON.", holidayTitle:"DJ DEFKILLA — ATMOSFERA NATALIZIA", officialEyebrow:"SELEZIONE UFFICIALE DJ DEFKILLA", officialTitle:"UNA SELEZIONE, UNA FIRMA.", officialText:"I mix pubblicati qui sono selezionati e aggiunti esclusivamente da DJ DEFKILLA. Mettiti comodo, scopri la selezione e buon ascolto.", mp3Hint:"Mix brevi ed esclusive da ascoltare direttamente qui.", mp3EmptyTitle:"I primi MP3 arriveranno presto.", mp3EmptyText:"Torna presto per scoprire i nuovi brani!", footerTag:"FATTO PER LA MUSICA.", heroCopy:"Selezioni che alzano la temperatura, anche in inverno. 🎄",
+    enterUniverse:"ENTRA NEL MIO MONDO", holidaySub:"BUONA MUSICA • BELLA ENERGIA • ATMOSFERA DI FESTA",
+    yourSelection:"LA TUA SELEZIONE", mixes:"I MIX", emptyMix:"NUOVI MIX IN ARRIVO. Resta connesso con DJ DEFKILLA.", online:"● ONLINE", all:"Tutti",
+    mixHint:"Tutti i mix di questa selezione sono scelti e pubblicati da DJ DEFKILLA.",
+    yourDjSpace:"IL TUO SPAZIO DJ", addMix:"AGGIUNGI UN MIX", mixName:"Nome del mix",
+    musicStyle:"Genere musicale", mixcloudLink:"Link del tuo mix su Mixcloud", addToList:"AGGIUNGI ALLA MIA LISTA",
+    localNote:"Nota: i mix aggiunti qui vengono salvati solo in questo browser. Per mostrarli automaticamente a tutti gli ascoltatori, sarà necessario collegare un database condiviso o un'area di amministrazione online.",
+    aboutEyebrow:"CHI C'È DIETRO LA CONSOLE?", aboutText:"Hip-hop, R&B, Dancehall e Reggaeton. Una selezione, un'energia, una firma.",
+    playerNote:"La riproduzione è fornita da Mixcloud e richiede una connessione Internet.",
+    close:"Chiudi", play:"▶ ASCOLTA", share:"Condividi ↗", invalid:"Inserisci un link a un mix pubblicato su Mixcloud (https://www.mixcloud.com/...).",
+    added:"Mix aggiunto a questa lista su questo dispositivo!", copied:"Link copiato!",
+    mountainEyebrow:"DJ DEFKILLA • LIVE SESSION", mountainTitle:"MIXANDO IN<br><span>MONTAGNA.</span>", mountainCaption:"La musica ovunque, anche in vetta."
+  },
 };
 function applyLanguage(lang) {
   const chosen = translations[lang] ? lang : "fr";
