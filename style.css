@@ -751,3 +751,138 @@ body{background:#050507!important}
 .install-btn{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:40px!important;padding:0 13px!important;margin-left:8px!important;border:1px solid #ff8795!important;border-radius:8px!important;background:linear-gradient(135deg,#ff3048,#a9001b)!important;color:#fff!important;font-size:11px!important;font-weight:900!important;letter-spacing:.6px!important;white-space:nowrap!important;box-shadow:0 0 14px #f21d3555!important;cursor:pointer!important}
 .install-btn[hidden]{display:none!important}
 @media(max-width:420px){.install-btn{min-height:36px!important;padding:0 8px!important;font-size:9px!important;margin-left:5px!important}.language-select{min-width:48px!important;width:48px!important;padding:6px 4px!important}}
+
+
+/* V25 — ROYAL CHRISTMAS OVERHAUL: visual skin only, layout and controls untouched */
+:root{
+ --holiday-green:#17633f;
+ --holiday-deep:#071b12;
+ --holiday-gold:#f2d58a;
+ --holiday-red:#f12b35;
+}
+body{
+ background:
+  radial-gradient(ellipse at 8% 8%,rgba(25,115,72,.18),transparent 34%),
+  radial-gradient(ellipse at 92% 18%,rgba(241,43,53,.16),transparent 32%),
+  linear-gradient(180deg,#080b09 0%,#0b0b0d 45%,#08090a 100%)!important;
+}
+.snowfall{
+ z-index:30!important;opacity:.9!important;pointer-events:none!important;
+ background-image:
+  radial-gradient(4px 4px at 22px 30px,#fff 96%,transparent),
+  radial-gradient(3px 3px at 100px 120px,#fff 96%,transparent),
+  radial-gradient(5px 5px at 190px 65px,#fff 96%,transparent),
+  radial-gradient(2px 2px at 270px 175px,#fff 96%,transparent),
+  radial-gradient(4px 4px at 330px 25px,#fff 96%,transparent),
+  radial-gradient(3px 3px at 410px 145px,#fff 96%,transparent)!important;
+ background-size:460px 230px!important;
+ animation:snowDrift 8s linear infinite!important;
+ filter:drop-shadow(0 0 4px rgba(255,255,255,.8))!important;
+}
+.snowfall:before,.snowfall:after{
+ content:"";position:fixed;inset:-100% 0 0;pointer-events:none;
+ background-repeat:repeat;
+}
+.snowfall:before{
+ opacity:.72;background-image:
+ radial-gradient(6px 6px at 40px 50px,#fff 94%,transparent),
+ radial-gradient(7px 7px at 210px 180px,#fff 94%,transparent),
+ radial-gradient(5px 5px at 360px 90px,#fff 94%,transparent);
+ background-size:520px 320px;animation:snowLarge 14s linear infinite;
+}
+.snowfall:after{
+ opacity:.48;background-image:
+ radial-gradient(2px 2px at 70px 40px,#fff 95%,transparent),
+ radial-gradient(2px 2px at 250px 160px,#fff 95%,transparent),
+ radial-gradient(3px 3px at 430px 80px,#fff 95%,transparent);
+ background-size:480px 260px;animation:snowDrift 19s linear infinite reverse;
+}
+@keyframes snowLarge{from{transform:translate3d(-12px,-20%,0)}to{transform:translate3d(24px,80%,0)}}
+.holiday-lights{
+ height:18px!important;overflow:visible!important;
+ background:linear-gradient(180deg,#10251a,#080b09 70%)!important;
+ border-bottom:1px solid rgba(226,196,123,.55)!important;
+ box-shadow:0 4px 18px rgba(0,0,0,.5),0 0 18px rgba(226,196,123,.12)!important;
+}
+.holiday-lights:before{
+ content:""!important;position:absolute!important;left:0!important;right:0!important;top:0!important;
+ height:14px!important;border-top:2px solid #d9bd78!important;border-radius:0 0 50% 50%!important;
+}
+.holiday-lights span{
+ position:relative!important;z-index:1!important;width:10px!important;height:15px!important;
+ margin-top:8px!important;border:1px solid rgba(255,255,255,.45)!important;
+ box-shadow:0 0 8px currentColor,0 0 18px currentColor!important;
+ animation:twinkle 1.15s ease-in-out infinite alternate!important;
+}
+.holiday-lights span:nth-child(3n){background:#ff263f!important}
+.holiday-lights span:nth-child(3n + 1){background:#38c879!important}
+.holiday-lights span:nth-child(3n + 2){background:#ffe3a0!important}
+.topbar{
+ background:linear-gradient(90deg,rgba(5,23,15,.97),rgba(12,10,12,.97),rgba(38,8,14,.97))!important;
+ border-bottom:1px solid #c5a45e!important;
+ box-shadow:0 4px 24px rgba(0,0,0,.45),0 1px 12px rgba(226,196,123,.18)!important;
+}
+.brand-mark{background:linear-gradient(145deg,#ff4053,#9c071b)!important;box-shadow:3px 3px 0 #d9bd78,0 0 18px #f12b3577!important}
+.hero{
+ border-bottom:2px solid #c5a45e!important;
+ box-shadow:inset 0 0 80px rgba(7,65,39,.18),0 10px 35px rgba(0,0,0,.38)!important;
+}
+.hero-garland{filter:drop-shadow(0 0 9px #f4d58b)!important}
+.hero-garland:before{border-bottom:3px solid #26764c!important;box-shadow:0 5px 12px #000!important}
+.holiday-sticker{
+ background:radial-gradient(circle at 35% 25%,#287b50,#0b3925 75%)!important;
+ border:3px solid #f2d58a!important;
+ box-shadow:0 0 0 5px rgba(23,99,63,.5),0 0 24px #e3c47b99,0 7px 22px #000!important;
+}
+.sound-dock,.shortcut-card,.official-strip,.mix-card,.mp3-card,.mp3-now-playing{
+ border-color:rgba(218,184,105,.78)!important;
+ box-shadow:0 0 0 1px rgba(23,99,63,.42),0 8px 24px rgba(0,0,0,.28),inset 0 0 18px rgba(226,196,123,.035)!important;
+}
+.sound-dock{background:linear-gradient(110deg,#071b12,#171014 58%,#251014)!important}
+.shortcut-card{background:linear-gradient(145deg,#10271c,#151216 60%,#2b0c12)!important}
+.official-strip{background:linear-gradient(90deg,#123c29,#171216 52%,#3b1018)!important}
+.section-heading .eyebrow,.about .eyebrow,.live-photo-copy .eyebrow{color:#f2d58a!important;text-shadow:0 0 12px rgba(226,196,123,.3)!important}
+.filter.active,.filter:hover,.play-btn,.primary-btn,.sound-toggle{
+ box-shadow:0 0 0 2px #164b31,0 0 18px rgba(241,43,53,.35),0 3px 0 #8b101c!important;
+}
+.holiday-note{
+ background:linear-gradient(90deg,#0b3925,#1a1715 48%,#4a101a)!important;
+ border-top:1px solid #e2c47b!important;border-bottom:1px solid #e2c47b!important;
+ box-shadow:0 0 22px rgba(226,196,123,.13),inset 0 0 20px rgba(226,196,123,.1)!important;
+}
+.genres{background:linear-gradient(90deg,#0d2c1e,#111216 50%,#321017)!important;border-bottom:1px solid #a9874e!important}
+.live-photo-feature{border-color:#e2c47b!important;box-shadow:0 0 0 3px #145032,0 0 28px rgba(226,196,123,.28)!important}
+.about{background:linear-gradient(110deg,#071b12,#141418 50%,#29080e)!important;border-top:1px solid #a9874e!important}
+footer{border-top:1px solid #b99b59!important}
+.install-btn{border-color:#f2d58a!important;background:linear-gradient(135deg,#e6c477,#a90e25 52%,#670b18)!important;box-shadow:0 0 15px rgba(226,196,123,.38),0 0 18px #f12b3555!important}
+body:before,body:after{
+ content:"";position:fixed;top:0;width:clamp(82px,17vw,190px);height:clamp(82px,17vw,155px);
+ z-index:29;pointer-events:none;opacity:.88;
+}
+body:before{
+ left:0;
+ background:
+  radial-gradient(circle at 23% 25%,#c51d31 0 5px,transparent 6px),
+  radial-gradient(circle at 30% 31%,#e52b3e 0 4px,transparent 5px),
+  radial-gradient(circle at 38% 20%,#a90d22 0 5px,transparent 6px),
+  repeating-conic-gradient(from 235deg at 18% 18%,transparent 0 8deg,#1c7548 9deg 13deg,transparent 14deg 22deg),
+  repeating-conic-gradient(from 220deg at 35% 38%,transparent 0 9deg,#145b39 10deg 14deg,transparent 15deg 24deg);
+ filter:drop-shadow(0 3px 5px #000) drop-shadow(0 0 7px #1c7548);
+}
+body:after{
+ right:0;transform:scaleX(-1);
+ background:
+  radial-gradient(circle at 23% 25%,#c51d31 0 5px,transparent 6px),
+  radial-gradient(circle at 30% 31%,#e52b3e 0 4px,transparent 5px),
+  radial-gradient(circle at 38% 20%,#a90d22 0 5px,transparent 6px),
+  repeating-conic-gradient(from 235deg at 18% 18%,transparent 0 8deg,#1c7548 9deg 13deg,transparent 14deg 22deg),
+  repeating-conic-gradient(from 220deg at 35% 38%,transparent 0 9deg,#145b39 10deg 14deg,transparent 15deg 24deg);
+ filter:drop-shadow(0 3px 5px #000) drop-shadow(0 0 7px #1c7548);
+}
+@media(max-width:520px){
+ body:before,body:after{width:86px;height:82px;opacity:.72}
+ .snowfall{opacity:.78!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .snowfall,.snowfall:before,.snowfall:after,.holiday-lights span{animation:none!important}
+}
