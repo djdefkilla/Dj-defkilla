@@ -8,7 +8,7 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="style.css?v=23">
+  <link rel="stylesheet" href="style.css?v=24">
   <title>DJ DEFKILLA — Official Mixes</title>
 <style id="welcome-popup-v23">
 body.welcome-open{overflow:hidden!important}
@@ -28,7 +28,21 @@ body.welcome-open{overflow:hidden!important}
 </div>
 </section>
 <script>
-document.addEventListener("keydown",function(event){if(event.key==="Escape"){const popup=document.getElementById("welcomeFlyer");if(popup&&!popup.hidden){popup.hidden=true;document.body.classList.remove("welcome-open");}}});
+(function(){
+  const popup=document.getElementById("welcomeFlyer");
+  if(!popup)return;
+  let popupTimer=window.setTimeout(function(){
+    popup.hidden=true;
+    document.body.classList.remove("welcome-open");
+  },5000);
+  const closePopup=function(){
+    window.clearTimeout(popupTimer);
+    popup.hidden=true;
+    document.body.classList.remove("welcome-open");
+  };
+  popup.querySelector(".welcome-popup-close")?.addEventListener("click",closePopup);
+  document.addEventListener("keydown",function(event){if(event.key==="Escape"&&!popup.hidden)closePopup();});
+})();
 </script>
   <div class="snowfall" aria-hidden="true"></div>
 <div class="holiday-lights" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
@@ -149,6 +163,6 @@ document.addEventListener("keydown",function(event){if(event.key==="Escape"){con
     </div>
   </div>
 
-  <script src="app.js?v=23"></script>
+  <script src="app.js?v=24"></script>
 </body>
 </html>
