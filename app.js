@@ -70,12 +70,30 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 let deferredPrompt;
 const installBtn = document.getElementById("installBtn");
+const isStandalone = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+if (isStandalone && installBtn) installBtn.hidden = true;
 window.addEventListener("beforeinstallprompt", e => {
-  e.preventDefault(); deferredPrompt = e; installBtn.hidden = false;
+  e.preventDefault(); deferredPrompt = e;
 });
-installBtn.addEventListener("click", async () => {
-  if (!deferredPrompt) return;
-  deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt = null; installBtn.hidden = true;
+window.addEventListener("appinstalled", () => {
+  deferredPrompt = null;
+  if (installBtn) installBtn.hidden = true;
+});
+installBtn?.addEventListener("click", async () => {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    await deferredPrompt.userChoice;
+    deferredPrompt = null;
+    return;
+  }
+  const lang = document.documentElement.lang || "fr";
+  const help = {
+    fr: "Pour installer DJ DEFKILLA : ouvre le menu ⋮ de Chrome puis choisis Installer l'application ou Ajouter à l'écran d'accueil.",
+    en: "To install DJ DEFKILLA: open Chrome's ⋮ menu and choose Install app or Add to Home screen.",
+    es: "Para instalar DJ DEFKILLA: abre el menú ⋮ de Chrome y elige Instalar aplicación o Añadir a pantalla de inicio.",
+    it: "Per installare DJ DEFKILLA: apri il menu ⋮ di Chrome e scegli Installa app o Aggiungi alla schermata Home."
+  };
+  window.alert(help[lang] || help.fr);
 });
 if ("serviceWorker" in navigator) window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(()=>{}));
 
