@@ -95,7 +95,7 @@ const translations = {
     aboutEyebrow:"QUI EST DERRIÈRE LES PLATINES ?", aboutText:"Hip-hop, R&B, Dancehall et Reggaeton. Une sélection, une énergie, une signature.",
     playerNote:"La lecture est fournie par Mixcloud et nécessite une connexion Internet.",
     close:"Fermer", play:"▶ ÉCOUTER", share:"Partager ↗", invalid:"Entre un lien de mix publié sur Mixcloud (https://www.mixcloud.com/...).",
-    added:"Mix ajouté à cette liste sur cet appareil !", copied:"Lien copié !"
+    added:"Mix ajouté à cette liste sur cet appareil !", copied:"Lien copié !", mountainEyebrow:"DJ DEFKILLA • LIVE SESSION", mountainTitle:"MIX EN PLEINE MONTAGNE", mountainCaption:"La musique partout, même au sommet."
   },
   en: {
     install:"Install app", genresLine:"HIP-HOP. R&B. DANCEHALL. REGGAETON.", holidayTitle:"DJ DEFKILLA — CHRISTMAS VIBES", officialEyebrow:"OFFICIAL DJ DEFKILLA SELECTION", officialTitle:"ONE SELECTION, ONE SIGNATURE.", officialText:"The mixes published here are selected and added exclusively by DJ DEFKILLA. Get comfortable, discover the selection and enjoy listening.", mp3Hint:"Short mixes and exclusives to listen to right here.", mp3EmptyTitle:"The first MP3s are coming soon.", mp3EmptyText:"Come back soon to discover new tracks!", footerTag:"BUILT FOR THE MUSIC.", heroCopy:"The selections that turn up the heat, even in winter. 🎄",
@@ -108,7 +108,7 @@ const translations = {
     aboutEyebrow:"WHO'S BEHIND THE DECKS?", aboutText:"Hip-hop, R&B, Dancehall and Reggaeton. One selection, one energy, one signature.",
     playerNote:"Playback is provided by Mixcloud and requires an internet connection.",
     close:"Close", play:"▶ LISTEN", share:"Share ↗", invalid:"Enter a Mixcloud mix URL (https://www.mixcloud.com/...).",
-    added:"Mix added to this list on this device!", copied:"Link copied!"
+    added:"Mix added to this list on this device!", copied:"Link copied!", mountainEyebrow:"DJ DEFKILLA • LIVE SESSION", mountainTitle:"MIXING IN THE MOUNTAINS", mountainCaption:"Music everywhere, even at the summit."
   },
   es: {
     install:"Instalar la app", genresLine:"HIP-HOP. R&B. DANCEHALL. REGGAETON.", holidayTitle:"DJ DEFKILLA — NAVIDAD VIBES", officialEyebrow:"SELECCIÓN OFICIAL DJ DEFKILLA", officialTitle:"UNA SELECCIÓN, UNA FIRMA.", officialText:"Los mixes publicados aquí son seleccionados y añadidos exclusivamente por DJ DEFKILLA. Ponte cómodo, descubre la selección y disfruta escuchando.", mp3Hint:"Mixes cortos y exclusividades para escuchar directamente aquí.", mp3EmptyTitle:"Los primeros MP3 llegan pronto.", mp3EmptyText:"¡Vuelve para descubrir nuevos temas!", footerTag:"HECHO PARA LA MÚSICA.", heroCopy:"Selecciones que suben la temperatura, incluso en invierno. 🎄",
@@ -121,8 +121,8 @@ const translations = {
     aboutEyebrow:"¿QUIÉN ESTÁ DETRÁS DE LOS PLATOS?", aboutText:"Hip-hop, R&B, Dancehall y Reggaeton. Una selección, una energía, una firma.",
     playerNote:"La reproducción se ofrece mediante Mixcloud y requiere conexión a Internet.",
     close:"Cerrar", play:"▶ ESCUCHAR", share:"Compartir ↗", invalid:"Introduce un enlace de Mixcloud (https://www.mixcloud.com/...).",
-    added:"¡Sesión añadida a esta lista en este dispositivo!", copied:"¡Enlace copiado!"
-  }
+    added:"¡Sesión añadida a esta lista en este dispositivo!", copied:"¡Enlace copiado!", mountainEyebrow:"DJ DEFKILLA • SESIÓN EN VIVO", mountainTitle:"MIX EN LA MONTAÑA", mountainCaption:"Música en todas partes, incluso en la cima."
+  },
   it: {
     install:"Installa l'app", genresLine:"HIP-HOP. R&B. DANCEHALL. REGGAETON.", holidayTitle:"DJ DEFKILLA — ATMOSFERA NATALIZIA", officialEyebrow:"SELEZIONE UFFICIALE DJ DEFKILLA", officialTitle:"UNA SELEZIONE, UNA FIRMA.", officialText:"I mix pubblicati qui sono selezionati e aggiunti esclusivamente da DJ DEFKILLA. Mettiti comodo, scopri la selezione e buon ascolto.", mp3Hint:"Mix brevi ed esclusive da ascoltare direttamente qui.", mp3EmptyTitle:"I primi MP3 arriveranno presto.", mp3EmptyText:"Torna presto per scoprire i nuovi brani!", footerTag:"FATTO PER LA MUSICA.", heroCopy:"Selezioni che alzano la temperatura, anche in inverno. 🎄",
     enterUniverse:"ENTRA NEL MIO MONDO", holidaySub:"BUONA MUSICA • BELLA ENERGIA • ATMOSFERA DI FESTA",
@@ -135,7 +135,7 @@ const translations = {
     playerNote:"La riproduzione è fornita da Mixcloud e richiede una connessione Internet.",
     close:"Chiudi", play:"▶ ASCOLTA", share:"Condividi ↗", invalid:"Inserisci un link a un mix pubblicato su Mixcloud (https://www.mixcloud.com/...).",
     added:"Mix aggiunto a questa lista su questo dispositivo!", copied:"Link copiato!",
-    mountainEyebrow:"DJ DEFKILLA • LIVE SESSION", mountainTitle:"MIXANDO IN<br><span>MONTAGNA.</span>", mountainCaption:"La musica ovunque, anche in vetta."
+    mountainEyebrow:"DJ DEFKILLA • LIVE SESSION", mountainTitle:"MIXANDO IN MONTAGNA", mountainCaption:"La musica ovunque, anche in vetta."
   },
 };
 function applyLanguage(lang) {
