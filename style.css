@@ -707,3 +707,30 @@ body{background:#050507!important}
 @media(max-width:520px){
  .hero:before{opacity:.31!important;background-size:104px 54px,104px 54px,104px 27px,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%!important;background-position:0 0,52px 27px,0 0,center,center,center,center,center,center!important}
 }
+
+
+/* V20 — mountain live-session photo + Italian language option */
+.live-photo-feature{
+ display:flex!important;position:relative!important;isolation:isolate!important;
+ min-height:340px!important;align-items:flex-end!important;overflow:hidden!important;
+ margin:18px 12px 24px!important;padding:190px 20px 22px!important;
+ border:2px solid #f21d35!important;border-radius:18px!important;
+ background:#09090b!important;box-shadow:0 0 0 3px #310b11,0 0 22px #f21d3548!important;
+}
+.live-photo-image{
+ position:absolute!important;z-index:-2!important;inset:0!important;width:100%!important;height:100%!important;
+ background-image:url("dj-defkilla-winter-live.png")!important;
+ background-position:center 38%!important;background-size:cover!important;opacity:.98!important;
+ -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 65%,#000 100%)!important;mask-image:none!important;
+}
+.live-photo-feature:after{
+ content:""!important;position:absolute!important;z-index:-1!important;inset:0!important;
+ background:linear-gradient(180deg,rgba(0,0,0,.04) 10%,rgba(0,0,0,.10) 35%,rgba(0,0,0,.88) 100%)!important;
+}
+.live-photo-copy{position:relative!important;z-index:1!important;max-width:100%!important}
+.live-photo-copy .eyebrow{color:#f4d58a!important;letter-spacing:2px!important;text-shadow:0 0 12px #f21d35!important}
+.live-photo-copy h2{font-family:Impact,"Arial Black",sans-serif!important;font-size:clamp(34px,8vw,56px)!important;line-height:.92!important;color:#fff!important;text-shadow:3px 3px 0 #65000d!important}
+.live-photo-copy h2 span{color:#ff263f!important}
+.mountain-caption{margin:10px 0 0!important;color:#fff!important;font-weight:700!important;text-shadow:0 2px 6px #000!important}
+.language-select option{background:#111!important;color:#fff!important}
+@media(max-width:520px){.live-photo-feature{min-height:300px!important;padding:160px 16px 18px!important;margin:15px 10px 20px!important}.live-photo-image{background-position:center 34%!important}.live-photo-copy h2{font-size:38px!important}}
