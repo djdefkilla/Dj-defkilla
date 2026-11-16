@@ -745,3 +745,9 @@ body{background:#050507!important}
   border-radius:9px!important;cursor:pointer!important;
 }
 .language-select option{font-size:20px!important;text-align:center!important}
+
+
+/* V22 — always-visible install action in the top bar */
+.install-btn{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:40px!important;padding:0 13px!important;margin-left:8px!important;border:1px solid #ff8795!important;border-radius:8px!important;background:linear-gradient(135deg,#ff3048,#a9001b)!important;color:#fff!important;font-size:11px!important;font-weight:900!important;letter-spacing:.6px!important;white-space:nowrap!important;box-shadow:0 0 14px #f21d3555!important;cursor:pointer!important}
+.install-btn[hidden]{display:none!important}
+@media(max-width:420px){.install-btn{min-height:36px!important;padding:0 8px!important;font-size:9px!important;margin-left:5px!important}.language-select{min-width:48px!important;width:48px!important;padding:6px 4px!important}}
