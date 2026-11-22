@@ -159,3 +159,69 @@ footer{display:flex;justify-content:space-between;gap:15px;padding:22px 18px 130
  footer{padding-bottom:125px}
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+
+
+/* V32 — DJ STAGE LIGHTING + MOUNTAIN PORTRAIT FEATURE */
+.holiday-lights{display:none!important}
+.hero{
+ isolation:isolate!important;
+ background:
+  radial-gradient(ellipse at 50% 18%,rgba(66,190,255,.25),transparent 40%),
+  radial-gradient(ellipse at 18% 56%,rgba(255,25,72,.18),transparent 30%),
+  radial-gradient(ellipse at 82% 56%,rgba(42,169,255,.2),transparent 30%),
+  linear-gradient(180deg,#03101e,#020914 92%)!important;
+}
+.hero:after{
+ background:
+  linear-gradient(105deg,transparent 5%,rgba(68,202,255,.04) 35%,rgba(180,240,255,.42) 49%,rgba(68,202,255,.08) 53%,transparent 68%),
+  linear-gradient(75deg,transparent 12%,rgba(255,32,75,.0) 40%,rgba(255,32,75,.18) 49%,transparent 60%),
+  radial-gradient(ellipse at 50% 28%,rgba(255,255,255,.12),transparent 38%)!important;
+ background-size:220% 100%,240% 100%,100% 100%!important;
+ animation:stageLightSweep 9s ease-in-out infinite!important;
+}
+.hero:before{
+ background:
+  linear-gradient(180deg,transparent 0 46%,rgba(1,8,17,.45) 66%,#020b17 100%),
+  repeating-linear-gradient(90deg,transparent 0 13%,rgba(80,199,255,.035) 13.2%,transparent 13.6% 25%)!important;
+}
+.hero-portraits{filter:drop-shadow(0 0 18px rgba(73,198,255,.2))!important}
+.portrait{filter:grayscale(1) contrast(1.2) brightness(.82)!important}
+.hero-crown{animation:crownFlash 3.6s ease-in-out infinite!important}
+.hero-speaker{animation:speakerPulse 2.8s ease-in-out infinite alternate!important}
+.hero-speaker:before,.hero-speaker:after{animation:wooferPulse 1.8s ease-in-out infinite!important}
+.hero-speaker:after{animation-delay:.4s!important}
+.hero-title-card{filter:drop-shadow(0 0 13px rgba(48,185,255,.16))!important}
+.hero h1 strong{animation:logoNeon 4s ease-in-out infinite!important}
+.hero-tagline{text-shadow:0 0 10px #6bd7ff88,0 2px 8px #000!important}
+.hero-skyline{opacity:.7!important}
+.about{
+ position:relative!important;overflow:hidden!important;
+ display:grid!important;grid-template-columns:minmax(150px,230px) minmax(0,1fr)!important;
+ align-items:center!important;gap:clamp(18px,4vw,42px)!important;
+ background:radial-gradient(ellipse at 18% 50%,rgba(49,183,255,.2),transparent 42%),linear-gradient(115deg,#061a2d,#020b16)!important;
+}
+.about-photo{
+ position:relative!important;z-index:1!important;width:100%!important;height:260px!important;max-width:230px!important;
+ border:2px solid #b9efff!important;border-radius:14px!important;
+ box-shadow:0 0 0 4px rgba(70,195,255,.18),0 0 28px rgba(65,190,255,.5)!important;
+}
+.about-photo img{object-position:48% 22%!important;filter:grayscale(1) contrast(1.08)!important}
+.about:before{
+ content:""!important;position:absolute!important;inset:0!important;pointer-events:none!important;
+ background:linear-gradient(115deg,transparent 20%,rgba(93,211,255,.08) 50%,transparent 75%);
+ animation:aboutLightPass 8s linear infinite!important;
+}
+.about-copy{position:relative!important;z-index:1!important}
+.sound-dock{box-shadow:0 0 0 3px #4bcaff25,0 0 24px #4bcaff66,0 5px 22px #000a!important}
+@keyframes stageLightSweep{0%,12%{background-position:130% 0,-130% 0,0 0;opacity:.35}42%{opacity:1}72%,100%{background-position:-130% 0,130% 0,0 0;opacity:.55}}
+@keyframes crownFlash{0%,100%{filter:drop-shadow(0 0 7px #eafaff)}50%{filter:drop-shadow(0 0 22px #62d5ff) brightness(1.35)}}
+@keyframes speakerPulse{from{box-shadow:0 0 0 3px #3ca9d8,0 0 16px #49cfff66,inset 0 0 15px #49cfff33}to{box-shadow:0 0 0 3px #3ca9d8,0 0 28px #49cfffcc,inset 0 0 24px #49cfff66}}
+@keyframes wooferPulse{0%,100%{filter:brightness(.85);transform:translateX(-50%) scale(.97)}50%{filter:brightness(1.4);transform:translateX(-50%) scale(1.04)}}
+@keyframes logoNeon{0%,100%{filter:drop-shadow(0 0 5px #f12e4b66)}50%{filter:drop-shadow(0 0 18px #f12e4bcc)}}
+@keyframes aboutLightPass{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+@media(max-width:600px){
+ .about{grid-template-columns:112px minmax(0,1fr)!important;gap:15px!important;padding:32px 15px!important}
+ .about-photo{width:112px!important;height:160px!important}
+ .about h2{font-size:clamp(25px,8vw,34px)!important}
+}
+@media(prefers-reduced-motion:reduce){.hero:after,.hero-crown,.hero-speaker,.hero-speaker:before,.hero-speaker:after,.hero h1 strong,.about:before{animation:none!important}}
