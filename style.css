@@ -225,3 +225,16 @@ footer{display:flex;justify-content:space-between;gap:15px;padding:22px 18px 130
  .about h2{font-size:clamp(25px,8vw,34px)!important}
 }
 @media(prefers-reduced-motion:reduce){.hero:after,.hero-crown,.hero-speaker,.hero-speaker:before,.hero-speaker:after,.hero h1 strong,.about:before{animation:none!important}}
+
+/* V33 — remove all header light strings; show the supplied DJ portrait prominently */
+.holiday-lights,.holiday-lights:before,.holiday-lights span{display:none!important;visibility:hidden!important;height:0!important;content:none!important}
+.topbar{top:0!important}
+#dj-profile.about{display:grid!important;grid-template-columns:minmax(115px,190px) minmax(0,1fr)!important;align-items:center!important;gap:22px!important;margin:0!important;padding:26px clamp(16px,5vw,48px)!important;min-height:230px!important;overflow:hidden!important;border-top:1px solid #65cfff!important;border-bottom:1px solid #65cfff!important}
+#dj-profile .about-photo{display:block!important;visibility:visible!important;opacity:1!important;width:100%!important;height:210px!important;max-width:190px!important;min-width:0!important;overflow:hidden!important;border:2px solid #b9efff!important;border-radius:14px!important;box-shadow:0 0 0 4px #4bcaff22,0 0 24px #4bcaff77!important}
+#dj-profile .about-photo img{display:block!important;visibility:visible!important;opacity:1!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:48% 22%!important;filter:grayscale(1) contrast(1.08)!important}
+#dj-profile .about-copy{display:block!important;position:relative!important;z-index:2!important}
+@media(max-width:600px){
+ #dj-profile.about{grid-template-columns:116px minmax(0,1fr)!important;gap:15px!important;padding:22px 14px!important;min-height:190px!important}
+ #dj-profile .about-photo{height:158px!important;width:116px!important}
+ #dj-profile .about h2{font-size:clamp(25px,8vw,34px)!important}
+}
