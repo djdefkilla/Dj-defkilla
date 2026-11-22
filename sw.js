@@ -1,5 +1,5 @@
-const CACHE = "dj-defkilla-v42-portrait";
-const ASSETS = ["./", "./index.html", "./style.css", "./app.js", "./manifest.webmanifest", "./icon.svg", "./logo-dj-defkilla.svg", "./icon-192.png", "./icon-512.png", "./apple-touch-icon.png", "./dj-defkilla-live-bw.png", "./dj-defkilla-winter-live.png", "./welcome-graffiti-noel-v14.jpg", "./dj-defkilla-jingle-bells-scratch.mp3", "./dj-defkilla-hiphop-logo.png"];
+const CACHE = "dj-defkilla-v43-banner";
+const ASSETS = ["./", "./index.html", "./style.css", "./app.js", "./manifest.webmanifest", "./icon.svg", "./logo-dj-defkilla.svg", "./icon-192.png", "./icon-512.png", "./apple-touch-icon.png", "./dj-defkilla-live-bw.png", "https://raw.githubusercontent.com/djdefkilla/Dj-defkilla/e30f8aa70aef879f0d72349d3e4c7a0091c48578/file_0000000001f08246ac76a7fa41689c73.png", "./dj-defkilla-winter-live.png", "./welcome-graffiti-noel-v14.jpg", "./dj-defkilla-jingle-bells-scratch.mp3", "./dj-defkilla-hiphop-logo.png"];
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
 });
