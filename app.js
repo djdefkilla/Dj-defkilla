@@ -92,11 +92,11 @@ installBtn?.addEventListener("click", async () => {
   const isAndroid = /Android/i.test(navigator.userAgent);
   const isChrome = /Chrome\//i.test(navigator.userAgent) && !/Edg\//i.test(navigator.userAgent);
   const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-  const siteUrl = "https://djdefkilla.github.io/Dj-defkilla/?v=44";
+  const siteUrl = "https://djdefkilla.github.io/Dj-defkilla/?v=46";
 
   // Android: send visitors from social-media in-app browsers to Chrome.
   if (isAndroid && !isChrome) {
-    const intentUrl = "intent://djdefkilla.github.io/Dj-defkilla/?v=44#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=" + encodeURIComponent(siteUrl) + ";end";
+    const intentUrl = "intent://djdefkilla.github.io/Dj-defkilla/?v=46#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=" + encodeURIComponent(siteUrl) + ";end";
     window.location.href = intentUrl;
     return;
   }
