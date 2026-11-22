@@ -252,3 +252,9 @@ footer{display:flex;justify-content:space-between;gap:15px;padding:22px 18px 130
 @keyframes loadingSweep{0%{transform:translateX(-110%)}100%{transform:translateX(260%)}}
 @media(max-width:600px){.brand-logo{width:154px!important;height:58px!important}}
 @media(prefers-reduced-motion:reduce){.loading-screen img,.loading-bar i{animation:none!important}}
+
+/* V35 — make the new brand mark visible in the header */
+.topbar .brand{display:flex!important;align-items:center!important;min-width:0!important;width:auto!important}
+.topbar .brand-logo{display:block!important;width:190px!important;height:72px!important;max-width:48vw!important;object-fit:contain!important;object-position:left center!important;opacity:1!important;visibility:visible!important}
+.topbar .brand-mark{display:none!important}
+@media(max-width:600px){.topbar .brand-logo{width:150px!important;height:64px!important;max-width:44vw!important}}
