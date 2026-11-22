@@ -273,3 +273,9 @@ footer{display:flex;justify-content:space-between;gap:15px;padding:22px 18px 130
 .loading-screen img{display:block!important;visibility:visible!important;opacity:1!important;content:normal!important;width:min(92vw,520px)!important;height:auto!important;max-height:68vh!important;object-fit:contain!important}
 .loading-screen strong{display:block!important;color:#f5fbff!important;font:900 18px Arial,sans-serif!important;letter-spacing:.3em!important;text-shadow:0 0 12px #38bfff!important}
 @media(max-width:600px){.topbar .brand .brand-logo{width:154px!important;height:78px!important;max-width:48vw!important}}
+
+/* V39 visible brand mark: explicit image sizing in header and loader */
+header.topbar > a.brand{display:flex!important;align-items:center!important;width:auto!important;min-width:170px!important;height:88px!important;overflow:visible!important}
+header.topbar > a.brand > img.brand-logo{display:block!important;width:170px!important;height:84px!important;max-width:52vw!important;min-width:0!important;opacity:1!important;visibility:visible!important;object-fit:contain!important;object-position:left center!important}
+#loadingScreen > img{display:block!important;width:min(88vw,460px)!important;height:auto!important;max-height:65vh!important;object-fit:contain!important}
+@media(max-width:600px){header.topbar > a.brand{min-width:148px!important;height:76px!important}header.topbar > a.brand > img.brand-logo{width:148px!important;height:76px!important;max-width:48vw!important}}
