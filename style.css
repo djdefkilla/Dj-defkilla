@@ -265,3 +265,11 @@ footer{display:flex;justify-content:space-between;gap:15px;padding:22px 18px 130
 .loading-screen img{content:url("./logo-dj-defkilla.svg?v=36")!important;width:min(94vw,560px)!important;max-height:72vh!important}
 .loading-screen strong{color:#f5fbff;font:900 18px Arial,sans-serif;letter-spacing:.34em;text-shadow:0 0 12px #38bfff}
 @media(max-width:600px){.topbar .brand-logo{width:148px!important;height:72px!important}}
+
+/* V38: harden all brand placements against stale text-logo styles */
+.topbar .brand{display:flex!important;align-items:center!important;justify-content:flex-start!important;min-width:0!important}
+.topbar .brand .brand-logo{display:block!important;visibility:visible!important;opacity:1!important;position:relative!important;width:176px!important;height:88px!important;max-width:52vw!important;object-fit:contain!important;object-position:left center!important;content:normal!important}
+.topbar .brand span,.topbar .brand .brand-mark{display:none!important}
+.loading-screen img{display:block!important;visibility:visible!important;opacity:1!important;content:normal!important;width:min(92vw,520px)!important;height:auto!important;max-height:68vh!important;object-fit:contain!important}
+.loading-screen strong{display:block!important;color:#f5fbff!important;font:900 18px Arial,sans-serif!important;letter-spacing:.3em!important;text-shadow:0 0 12px #38bfff!important}
+@media(max-width:600px){.topbar .brand .brand-logo{width:154px!important;height:78px!important;max-width:48vw!important}}
