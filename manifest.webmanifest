@@ -2,7 +2,7 @@
   "name": "DJ DEFKILLA",
   "short_name": "DJ DEFKILLA",
   "description": "DJ DEFKILLA — Mixes, Hip-hop, R&B, Dancehall et Reggaeton.",
-  "start_url": "./",
+  "start_url": "./?source=pwa",
   "scope": "./",
   "display": "standalone",
   "background_color": "#030b17",
@@ -20,5 +20,10 @@
       "type": "image/png",
       "purpose": "any"
     }
+  ],
+  "id": "./",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
   ]
 }
