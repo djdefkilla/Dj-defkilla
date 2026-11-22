@@ -258,3 +258,10 @@ footer{display:flex;justify-content:space-between;gap:15px;padding:22px 18px 130
 .topbar .brand-logo{display:block!important;width:190px!important;height:72px!important;max-width:48vw!important;object-fit:contain!important;object-position:left center!important;opacity:1!important;visibility:visible!important}
 .topbar .brand-mark{display:none!important}
 @media(max-width:600px){.topbar .brand-logo{width:150px!important;height:64px!important;max-width:44vw!important}}
+
+/* V36: replace old mark with the new chrome DJ DEFKILLA emblem */
+.topbar .brand-logo{content:url("./logo-dj-defkilla.svg?v=36")!important;width:168px!important;height:84px!important;object-fit:contain!important;filter:drop-shadow(0 0 12px #25baffaa)!important}
+.loading-screen{background:radial-gradient(ellipse at center,#0b2943,#020710 72%)!important}
+.loading-screen img{content:url("./logo-dj-defkilla.svg?v=36")!important;width:min(94vw,560px)!important;max-height:72vh!important}
+.loading-screen strong{color:#f5fbff;font:900 18px Arial,sans-serif;letter-spacing:.34em;text-shadow:0 0 12px #38bfff}
+@media(max-width:600px){.topbar .brand-logo{width:148px!important;height:72px!important}}
