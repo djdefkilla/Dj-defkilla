@@ -286,3 +286,24 @@ header.topbar .brand img,.brand-logo,.brand-mark{display:none!important}
 header.topbar .brand.brand-text-only span{display:block!important;font-size:clamp(19px,4.8vw,27px)!important;line-height:1.1!important;font-weight:800!important;letter-spacing:.04em!important;color:#f4f8ff!important;text-shadow:0 0 12px #42caff55!important}
 header.topbar .brand.brand-text-only b{color:#f04464!important}
 .loading-screen{display:none!important}
+
+
+/* V41 — subtle DJ light-show accents, without changing layout or adding logos */
+.hero-crown{filter:drop-shadow(0 0 9px rgba(185,239,255,.75));animation:crownBeamGlow 3.8s ease-in-out infinite!important}
+.hero-speaker{animation:speakerFlash 2.7s ease-in-out infinite alternate!important}
+.hero-speaker:nth-of-type(2){animation-delay:.65s!important}
+.hero-speaker:before,.hero-speaker:after{animation:wooferBeat 1.45s ease-in-out infinite!important}
+.hero-speaker:after{animation-delay:.35s!important}
+.hero-title-card{position:relative;filter:drop-shadow(0 0 9px rgba(40,184,255,.18));animation:titleGlow 5s ease-in-out infinite}
+.hero h1 strong{text-shadow:0 0 8px rgba(239,35,75,.7),0 0 22px rgba(239,35,75,.28);animation:headlineNeon 4.2s ease-in-out infinite alternate}
+.sound-dock{animation:dockGlow 4.8s ease-in-out infinite alternate}
+.hero-decor.decor-snowflake{animation:snowflakeGlint 4.5s ease-in-out infinite}
+.hero-decor.decor-snowflake.two{animation-delay:1.7s}
+@keyframes crownBeamGlow{0%,100%{filter:drop-shadow(0 0 6px rgba(185,239,255,.55))}50%{filter:drop-shadow(0 0 19px rgba(75,202,255,.95)) brightness(1.16)}}
+@keyframes speakerFlash{from{box-shadow:0 0 0 3px #3ca9d8,0 0 13px #49cfff55,inset 0 0 12px #49cfff22}to{box-shadow:0 0 0 3px #3ca9d8,0 0 27px #49cfffbb,inset 0 0 23px #49cfff55}}
+@keyframes wooferBeat{0%,100%{filter:brightness(.9);transform:translateX(-50%) scale(.98)}50%{filter:brightness(1.35);transform:translateX(-50%) scale(1.045)}}
+@keyframes titleGlow{0%,100%{filter:drop-shadow(0 0 5px rgba(40,184,255,.12))}50%{filter:drop-shadow(0 0 17px rgba(40,184,255,.38))}}
+@keyframes headlineNeon{from{text-shadow:0 0 6px rgba(239,35,75,.55),0 0 13px rgba(239,35,75,.18)}to{text-shadow:0 0 12px rgba(239,35,75,.85),0 0 27px rgba(239,35,75,.42)}}
+@keyframes dockGlow{from{box-shadow:0 0 0 2px #4bcaff1c,0 0 15px #4bcaff45,0 5px 22px #000a}to{box-shadow:0 0 0 3px #4bcaff35,0 0 27px #4bcaff88,0 5px 22px #000a}}
+@keyframes snowflakeGlint{0%,100%{opacity:.72;filter:drop-shadow(0 0 2px #b9efff)}50%{opacity:1;filter:drop-shadow(0 0 10px #b9efff)}}
+@media(prefers-reduced-motion:reduce){.hero-crown,.hero-speaker,.hero-speaker:before,.hero-speaker:after,.hero-title-card,.hero h1 strong,.sound-dock,.hero-decor.decor-snowflake{animation:none!important}}
