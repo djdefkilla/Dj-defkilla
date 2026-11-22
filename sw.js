@@ -1,4 +1,4 @@
-const CACHE = "dj-defkilla-v26-mix1";
+const CACHE = "dj-defkilla-v27-mixtape";
 const ASSETS = ["./", "./index.html", "./style.css", "./app.js", "./manifest.webmanifest", "./icon.svg", "./icon-192.png", "./icon-512.png", "./apple-touch-icon.png", "./dj-defkilla-live-bw.png", "./dj-defkilla-winter-live.png", "./welcome-graffiti-noel-v14.jpg", "./dj-defkilla-jingle-bells-scratch.mp3", "./dj-defkilla-hiphop-logo.png"];
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
