@@ -80,18 +80,40 @@ window.addEventListener("appinstalled", () => {
   if (installBtn) installBtn.hidden = true;
 });
 installBtn?.addEventListener("click", async () => {
+  // If the browser exposes the native PWA prompt, use it first.
   if (deferredPrompt) {
     deferredPrompt.prompt();
     await deferredPrompt.userChoice;
     deferredPrompt = null;
     return;
   }
+
   const lang = document.documentElement.lang || "fr";
+  const isAndroid = /Android/i.test(navigator.userAgent);
+  const isChrome = /Chrome\//i.test(navigator.userAgent) && !/Edg\//i.test(navigator.userAgent);
+  const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+  const siteUrl = "https://djdefkilla.github.io/Dj-defkilla/?v=44";
+
+  // Android: send visitors from social-media in-app browsers to Chrome.
+  if (isAndroid && !isChrome) {
+    const intentUrl = "intent://djdefkilla.github.io/Dj-defkilla/?v=44#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=" + encodeURIComponent(siteUrl) + ";end";
+    window.location.href = intentUrl;
+    return;
+  }
+
   const messages = {
-    fr: "Le bouton d'installation est bien intégré à DJ DEFKILLA. La fenêtre d'installation officielle n'est pas disponible dans ce navigateur pour le moment. Réessaie depuis un navigateur compatible ou lorsque l'application sera proposée à l'installation.",
-    en: "The install button is built into DJ DEFKILLA. The official installation prompt is not available in this browser right now. Try again in a supported browser.",
-    es: "El botón de instalación está integrado en DJ DEFKILLA. La ventana oficial de instalación no está disponible en este navegador ahora mismo.",
-    it: "Il pulsante di installazione è integrato in DJ DEFKILLA. La finestra ufficiale di installazione non è disponibile in questo browser al momento."
+    fr: isIOS
+      ? "Pour installer DJ DEFKILLA sur iPhone : ouvre cette page dans Safari, appuie sur Partager, puis « Sur l’écran d’accueil »."
+      : "La page est ouverte dans un navigateur compatible. Dans Chrome, appuie sur ⋮ puis « Installer l’application » ou « Ajouter à l’écran d’accueil ».",
+    en: isIOS
+      ? "To install DJ DEFKILLA on iPhone, open this page in Safari, tap Share, then Add to Home Screen."
+      : "In Chrome, tap ⋮ then Install app or Add to Home screen.",
+    es: isIOS
+      ? "Para instalar DJ DEFKILLA en iPhone, abre esta página en Safari, pulsa Compartir y luego Añadir a pantalla de inicio."
+      : "En Chrome, pulsa ⋮ y luego Instalar aplicación o Añadir a pantalla de inicio.",
+    it: isIOS
+      ? "Per installare DJ DEFKILLA su iPhone, apri questa pagina in Safari, tocca Condividi e poi Aggiungi alla schermata Home."
+      : "In Chrome, tocca ⋮ e poi Installa app o Aggiungi alla schermata Home."
   };
   window.alert(messages[lang] || messages.fr);
 });
