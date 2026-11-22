@@ -140,6 +140,9 @@
   <script src="app.js?v=34"></script>
   <script>
     document.getElementById('installShortcut')?.addEventListener('click',()=>document.getElementById('installBtn')?.click());
+    const hideLoading=()=>document.getElementById('loadingScreen')?.classList.add('is-hidden');
+    window.addEventListener('load',()=>setTimeout(hideLoading,450),{once:true});
+    if(document.readyState==='complete') setTimeout(hideLoading,650);
   </script>
 </body>
 </html>
