@@ -238,3 +238,17 @@ footer{display:flex;justify-content:space-between;gap:15px;padding:22px 18px 130
  #dj-profile .about-photo{height:158px!important;width:116px!important}
  #dj-profile .about h2{font-size:clamp(25px,8vw,34px)!important}
 }
+
+/* V34 — professional chrome DJ identity: header, loading screen and PWA icon */
+.brand{display:flex!important;align-items:center!important;gap:0!important}
+.brand-logo{display:block!important;width:clamp(150px,24vw,220px)!important;height:68px!important;object-fit:contain!important;object-position:left center!important;filter:drop-shadow(0 0 9px #31baff66)!important}
+.brand-mark{display:none!important}
+.loading-screen{position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;background:radial-gradient(ellipse at center,#102c47 0%,#030b17 68%);opacity:1;visibility:visible;transition:opacity .55s ease,visibility .55s ease}
+.loading-screen img{width:min(82vw,430px);height:auto;max-height:65vh;object-fit:contain;filter:drop-shadow(0 0 22px #28baff88);animation:logoBootPulse 2.4s ease-in-out infinite}
+.loading-bar{width:min(65vw,280px);height:7px;overflow:hidden;border-radius:10px;border:1px solid #9deaff;background:#08192b;box-shadow:0 0 12px #29baff66}
+.loading-bar i{display:block;width:42%;height:100%;border-radius:10px;background:linear-gradient(90deg,#21baff,#fff,#ef244a);box-shadow:0 0 12px #ed244a;animation:loadingSweep 1.45s ease-in-out infinite}
+.loading-screen.is-hidden{opacity:0;visibility:hidden;pointer-events:none}
+@keyframes logoBootPulse{0%,100%{transform:scale(.985);filter:drop-shadow(0 0 12px #28baff66)}50%{transform:scale(1.015);filter:drop-shadow(0 0 25px #28baffcc)}}
+@keyframes loadingSweep{0%{transform:translateX(-110%)}100%{transform:translateX(260%)}}
+@media(max-width:600px){.brand-logo{width:154px!important;height:58px!important}}
+@media(prefers-reduced-motion:reduce){.loading-screen img,.loading-bar i{animation:none!important}}
