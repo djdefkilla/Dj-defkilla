@@ -307,3 +307,10 @@ header.topbar .brand.brand-text-only b{color:#f04464!important}
 @keyframes dockGlow{from{box-shadow:0 0 0 2px #4bcaff1c,0 0 15px #4bcaff45,0 5px 22px #000a}to{box-shadow:0 0 0 3px #4bcaff35,0 0 27px #4bcaff88,0 5px 22px #000a}}
 @keyframes snowflakeGlint{0%,100%{opacity:.72;filter:drop-shadow(0 0 2px #b9efff)}50%{opacity:1;filter:drop-shadow(0 0 10px #b9efff)}}
 @media(prefers-reduced-motion:reduce){.hero-crown,.hero-speaker,.hero-speaker:before,.hero-speaker:after,.hero-title-card,.hero h1 strong,.sound-dock,.hero-decor.decor-snowflake{animation:none!important}}
+
+
+/* V43 — nouvelle bannière fournie par DJ DEFKILLA */
+.hero-portraits.hero-banner-wrap{height:390px!important;inset:0 0 auto!important;width:100%!important;display:block!important;overflow:hidden!important;filter:none!important;}
+.hero-banner-image{display:block!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center center!important;opacity:1!important;filter:none!important;-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 76%,transparent 100%)!important;mask-image:linear-gradient(180deg,#000 0%,#000 76%,transparent 100%)!important;}
+@media(min-width:900px){.hero-portraits.hero-banner-wrap{height:570px!important}}
+@media(max-width:600px){.hero-portraits.hero-banner-wrap{height:340px!important}.hero-banner-image{object-position:center center!important}}
